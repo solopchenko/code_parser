@@ -16,5 +16,10 @@ namespace Code_parser
         {
             InitializeComponent();
         }
+
+        private void Open_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
