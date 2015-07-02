@@ -72,10 +72,103 @@ namespace Code_parser
 
                 catch
                 {
-                    MessageBox.Show("Не удалось открыть файл.\nВозможно файл удален или доступ к нему запрещен.", "Ошибка открытия файла", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Не удалось открыть файл.\nВозможно доступ к файлу запрещен. Либо файл был перемещен или удален.", "Ошибка открытия файла", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
+        }
+
+        public void RemoveComments()
+        {
+
+            for (int i = 0; i < raw_code.Length - 1; i++)
+            {
+                //Удаление комментариев типа //
+                if ((raw_code[i] == '/') && (raw_code[i + 1] == '/'))
+                {
+                    while ((raw_code[i] != '\n') & (i < raw_code.Length - 1))
+                    {
+                        raw_code.Replace(raw_code[i].ToString(), String.Empty);
+                        i++;
+                    }
+                }
+
+                //Удаление коментариев /* */
+                if ((raw_code[i] == '/') && (raw_code[i + 1] == '*'))
+                {
+                    int a = raw_code.IndexOf("*/", i + 2);
+
+                    i = a + 2;
+                }
+
+                code = code + raw_code[i];
+            }
+
+            //code = code.Replace("\n", String.Empty);
+            code = code.Replace("\r", String.Empty);
+            code = code.Replace("\r\n", String.Empty);
+            code = code.Replace("\t", String.Empty);
+        }
+
+        //Разбиение кода на части
+        public string[] SplitCode()
+        {
+            RemoveComments();
+
+            char[] spit_array = { ' ', '\n', '\r' };
+
+            string[] s_code = code.Split(spit_array);
+
+            return s_code;
+        }
+
+        //Подсчет операторов
+        public void CountOperators(string[] split_code)
+        {
+
+            foreach (var op in operators_list)
+            {
+                foreach (var s in split_code)
+                {
+                    if (s.Contains(op))
+                    {
+                        operators[op] = operators[op] + 1;
+                    }
+                }
+
+            }
+        }
+
+        public void Reset()
+        {
+            operators = new Dictionary<string, int>();
+            foreach (var op in operators_list)
+            {
+                operators.Add(op, 0);
+            }
+            
+            raw_code = String.Empty;
+
+            code = String.Empty;
+        }
+
+
+        public void AnalyzeCode()
+        {
+            Reset();
+
+            string fileName = OpenDialog();
+
+            if (fileName == String.Empty)
+            {
+                MessageBox.Show("Файл не выбран.");
+            }
+
+            ReadFile(fileName);
+
+            string[] s_code = SplitCode();
+
+            CountOperators(s_code);
         }
 
     }
@@ -144,74 +237,6 @@ namespace Code_parser
 //        }
 
 
-//        //Разбиение кода на части
-//        public string[] SplitCode()
-//        {
-//            FormatCode();
 
-//            char[] spit_array = { ' ', '\n', '\r' };
-
-//            string[] s_code = code.Split(spit_array);
-
-//            return s_code;
-//        }
-
-//        //Подсчет операторов
-//        public void CountOperators(string[] split_code)
-//        {
-//            //foreach (var item in split_code)
-//            //{
-//            //    if (operators.ContainsKey(item))
-//            //    {
-//            //        operators[item] = operators[item] + 1;
-//            //    }
-//            //}
-
-//            foreach (var item in o)
-//            {
-//                foreach (var i in split_code)
-//                {
-//                    if (i.Contains(item))
-//                    {
-//                        operators[item] = operators[item] + 1;
-//                    }
-//                }
-
-//            }
-//        }
-
-//        public void Reset()
-//        {
-//            operators = new Dictionary<string, int>();
-//            operators.Add("if", 0);
-//            operators.Add(";", 0);
-//            operators.Add("foreach", 0);
-//            operators.Add("for", 0);
-//            operators.Add("while", 0);
-//            operators.Add("switch", 0);
-//            operators.Add("try", 0);
-//            operators.Add("throw", 0);
-
-//            code = String.Empty;
-//        }
-
-
-//        public void AnalyzeCode()
-//        {
-//            Reset();
-
-//            string fileName = OpenDialog();
-
-//            if (fileName == String.Empty)
-//            {
-//                MessageBox.Show("Файл не выбран.");
-//            }
-
-//            ReadFile(fileName);
-
-//            string[] s_code = SplitCode();
-
-//            CountOperators(s_code);
-//        }
 //    }
 //}

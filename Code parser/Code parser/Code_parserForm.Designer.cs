@@ -104,11 +104,11 @@
             // Open_ToolStripMenuItem
             // 
             this.Open_ToolStripMenuItem.Name = "Open_ToolStripMenuItem";
-            this.Open_ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.Open_ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.Open_ToolStripMenuItem.Text = "Открыть";
             this.Open_ToolStripMenuItem.Click += new System.EventHandler(this.Open_ToolStripMenuItem_Click);
             // 
-            // Form1
+            // Code_parserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,7 +117,7 @@
             this.Controls.Add(this.FileContent_groupBox);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
-            this.Name = "Form1";
+            this.Name = "Code_parserForm";
             this.Text = "Code parser";
             this.FileContent_groupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).EndInit();

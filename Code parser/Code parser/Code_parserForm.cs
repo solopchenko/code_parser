@@ -33,7 +33,7 @@ namespace Code_parser
 
         private void Open_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            f.ReadFile("sddsd");
+            f.AnalyzeCode();
 
             FileContent_richTextBox.Text = f.raw_code;
 
