@@ -1,6 +1,6 @@
 ﻿namespace Code_parser
 {
-    partial class Form1
+    partial class Code_parserForm
     {
         /// <summary>
         /// Required designer variable.
