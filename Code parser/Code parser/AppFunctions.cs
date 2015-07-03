@@ -114,10 +114,17 @@ namespace Code_parser
                 code = code + raw_code[i];
             }
 
-            //code = code.Replace("\n", String.Empty);
+            //Удаление переходов на новую строку
+            code = code.Replace("\n", String.Empty);
+
+            //Удаление вощвратов каретки
             code = code.Replace("\r", String.Empty);
-            code = code.Replace("\r\n", String.Empty);
+
+            //Удаление Tab-ов
             code = code.Replace("\t", String.Empty);
+
+            //Удаление тройных пробелов
+            code = code.Replace("   ", String.Empty);
         }
 
         //Разбиение кода на части
