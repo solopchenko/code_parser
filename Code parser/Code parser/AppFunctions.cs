@@ -192,19 +192,19 @@ namespace Code_parser
 
             string fileName = OpenDialog();
 
-            if (fileName == String.Empty)
+            if (!String.IsNullOrEmpty(fileName))
             {
-                MessageBox.Show("Файл не выбран.");
+                if (ReadFile(fileName))
+                {
+                    string[] s_code = SplitCode();
+
+                    CountOperators(s_code);
+                }
+                else
+                {
+                    return;
+                }
             }
-
-            if (!ReadFile(fileName))
-            {
-                return;
-            }
-
-            string[] s_code = SplitCode();
-
-            CountOperators(s_code);
         }
 
         public string SaveDialog()
