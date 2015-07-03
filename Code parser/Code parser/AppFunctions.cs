@@ -98,7 +98,7 @@ namespace Code_parser
                 {
                     int a = raw_code.IndexOf("*/", i + 2);
 
-                    i = a + 2;
+                    i = a + 1;
                 }
 
                 code = code + raw_code[i];
