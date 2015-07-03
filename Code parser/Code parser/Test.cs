@@ -29,17 +29,19 @@ namespace Code_parser
         {
             string s = "Обычная строка!";
 
+            string s1 = "Я строка с \"кавычками\"";
+
             try
             {
                 List<int> k = new List<int>();
 
                 foreach (var item in k)
                 {
-                    while(true)
+                    while (true)
                     {
                         char ch = 'z';
 
-                        switch(ch)
+                        switch (ch)
                         {
                             case 'm':
                                 {
@@ -117,3 +119,5 @@ namespace Code_parser
 //Комментарий внизу
 
 /* Привет */
+
+//Комментарий внизу
