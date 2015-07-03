@@ -35,6 +35,7 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Open_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExportReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FileContent_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).BeginInit();
             this.stat_groupBox.SuspendLayout();
@@ -96,7 +97,8 @@
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Open_ToolStripMenuItem});
+            this.Open_ToolStripMenuItem,
+            this.ExportReportToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
@@ -104,9 +106,16 @@
             // Open_ToolStripMenuItem
             // 
             this.Open_ToolStripMenuItem.Name = "Open_ToolStripMenuItem";
-            this.Open_ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.Open_ToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.Open_ToolStripMenuItem.Text = "Открыть";
             this.Open_ToolStripMenuItem.Click += new System.EventHandler(this.Open_ToolStripMenuItem_Click);
+            // 
+            // ExportReportToolStripMenuItem
+            // 
+            this.ExportReportToolStripMenuItem.Name = "ExportReportToolStripMenuItem";
+            this.ExportReportToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.ExportReportToolStripMenuItem.Text = "Сохранить отчет";
+            this.ExportReportToolStripMenuItem.Click += new System.EventHandler(this.ExportReportToolStripMenuItem_Click);
             // 
             // Code_parserForm
             // 
@@ -138,6 +147,7 @@
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Open_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExportReportToolStripMenuItem;
     }
 }
 

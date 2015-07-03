@@ -42,5 +42,10 @@ namespace Code_parser
             stat_grid.Columns[0].HeaderText = "Оператор";
             stat_grid.Columns[1].HeaderText = "Количество";
         }
+
+        private void ExportReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            f.ExportReport();
+        }
     }
 }

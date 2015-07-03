@@ -56,7 +56,7 @@ namespace Code_parser
         }
 
         //Чтение файла
-        public void ReadFile(string fileName)
+        public bool ReadFile(string fileName)
         {
             string str = string.Empty;
 
@@ -73,9 +73,15 @@ namespace Code_parser
                 catch
                 {
                     MessageBox.Show("Не удалось открыть файл.\nВозможно доступ к файлу запрещен. Либо файл был перемещен или удален.", "Ошибка открытия файла", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    return false;
                 }
             }
+            else
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public void RemoveComments()
@@ -181,79 +187,59 @@ namespace Code_parser
                 MessageBox.Show("Файл не выбран.");
             }
 
-            ReadFile(fileName);
+            if (!ReadFile(fileName))
+            {
+                return;
+            }
 
             string[] s_code = SplitCode();
 
             CountOperators(s_code);
         }
 
+        public string SaveDialog()
+        {
+            var fd = new SaveFileDialog();
+            fd.Title = "Выберите место для сохранения отчета";
+            fd.Filter = "CSV file *.csv | *.CSV";
+
+
+            fd.ShowDialog();
+
+            return fd.FileName;
+        }
+
+        public void CreateReportFile(string FileName)
+        {
+            if (!String.IsNullOrEmpty(FileName))
+            {
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(FileName, false))
+                    {
+                        sw.WriteLine("Оператор;Количество");
+                        foreach (var elem in operators_list)
+                        {
+                            sw.WriteLine(elem + ";" + operators[elem]);
+                        }
+                    }
+                }
+
+                catch
+                {
+                    MessageBox.Show("Не удалось сохранить файл.\nВозможно доступ к папке запрещен.", "Ошибка сохранения файла", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+        }
+
+        public void ExportReport()
+        {
+            string FileName = SaveDialog();
+
+            CreateReportFile(FileName);
+        }
+
+
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-//        public void FormatCode()
-//        {
-//            //string s = String.Empty;
-
-
-//            for (int i = 0; i < raw_code.Length - 1; i++)
-//            {
-//                //Удаление комментариев типа //
-//                if ((raw_code[i] == '/') && (raw_code[i + 1] == '/'))
-//                {
-//                    while ((raw_code[i] != '\n') & (i < raw_code.Length - 1))
-//                    {
-//                        raw_code.Replace(raw_code[i].ToString(), String.Empty);
-//                        i++;
-//                    }
-//                }
-
-
-//                ////Удаление строк "" работает так себе
-//                //if ((code[i] == '\"'))
-//                //{
-//                //    int a = code.IndexOf("\"", i + 1);
-
-//                //    int b = code.IndexOf("\\\"", i + 1);
-
-//                //    if ((a >= 0) & (b >= 0))
-//                //    {
-//                //        if (a < b)
-//                //            i = a;
-//                //        else
-//                //            i = b + 1;
-//                //    }
-//                //}
-                
-
-//                //Удаление коментариев /* */
-//                if ((raw_code[i] == '/') && (raw_code[i + 1] == '*'))
-//                {
-//                    int a = raw_code.IndexOf("*/", i + 2);
-
-//                    i = a + 2;
-//                }
-
-//                code = code + raw_code[i];
-//            }
-            
-//            code = code.Replace("\n", String.Empty);
-//            code = code.Replace("\r", String.Empty);
-//            code = code.Replace("\r\n", String.Empty);
-//            code = code.Replace("\t", String.Empty);
-//        }
-
-
-
-//    }
-//}

@@ -10,3 +10,9 @@ Z:\Dropbox\Learning\Course 3\Практика\code_parser\Code parser\Code parse
 C:\Users\ДНФ\Desktop\Практика\code_parser\Code parser\Code parser\bin\Debug\Code parser.exe.config
 C:\Users\ДНФ\Desktop\Практика\code_parser\Code parser\Code parser\obj\Debug\Code parser.exe
 C:\Users\ДНФ\Desktop\Практика\code_parser\Code parser\Code parser\obj\Debug\Code parser.pdb
+C:\Users\ДНФ\Desktop\Практика\code_parser\Code parser\Code parser\bin\Debug\Code parser.exe
+C:\Users\ДНФ\Desktop\Практика\code_parser\Code parser\Code parser\bin\Debug\Code parser.pdb
+C:\Users\ДНФ\Desktop\Практика\code_parser\Code parser\Code parser\obj\Debug\Code parser.csprojResolveAssemblyReference.cache
+C:\Users\ДНФ\Desktop\Практика\code_parser\Code parser\Code parser\obj\Debug\Code_parser.Code_parserForm.resources
+C:\Users\ДНФ\Desktop\Практика\code_parser\Code parser\Code parser\obj\Debug\Code_parser.Properties.Resources.resources
+C:\Users\ДНФ\Desktop\Практика\code_parser\Code parser\Code parser\obj\Debug\Code parser.csproj.GenerateResource.Cache
