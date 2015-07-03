@@ -101,6 +101,16 @@ namespace Code_parser
                     i = a + 1;
                 }
 
+                //Удаление строк ""
+                if ((raw_code[i] == '\"'))
+                {
+                    i++;
+                    while (raw_code[i] != '\"')
+                    {
+                        i++;
+                    }
+                }
+
                 code = code + raw_code[i];
             }
 
