@@ -38,6 +38,9 @@ namespace Code_parser
             FileContent_richTextBox.Text = f.raw_code;
 
             stat_grid.DataSource = f.operators.ToList();
+
+            stat_grid.Columns[0].HeaderText = "Оператор";
+            stat_grid.Columns[1].HeaderText = "Количество";
         }
     }
 }
