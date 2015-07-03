@@ -84,7 +84,8 @@ namespace Code_parser
             return true;
         }
 
-        public void RemoveComments()
+        //Удаление коментариев и строк
+        public void RemoveCommentsAndStrings()
         {
 
             for (int i = 0; i < raw_code.Length - 1; i++)
@@ -146,7 +147,7 @@ namespace Code_parser
         //Разбиение кода на части
         public string[] SplitCode()
         {
-            RemoveComments();
+            RemoveCommentsAndStrings();
 
             char[] spit_array = { ' ', '\n', '\r' };
 
@@ -172,6 +173,7 @@ namespace Code_parser
             }
         }
 
+        //Сброс количества операторов
         public void Reset()
         {
             operators = new Dictionary<string, int>();
@@ -185,7 +187,7 @@ namespace Code_parser
             code = String.Empty;
         }
 
-
+        //Анализ кода
         public void AnalyzeCode()
         {
             Reset();
@@ -207,18 +209,19 @@ namespace Code_parser
             }
         }
 
+        //Выбор места сохранения файлов
         public string SaveDialog()
         {
             var fd = new SaveFileDialog();
             fd.Title = "Выберите место для сохранения отчета";
             fd.Filter = "CSV file *.csv | *.CSV";
 
-
             fd.ShowDialog();
 
             return fd.FileName;
         }
 
+        //Формирование отчета
         public void CreateReportFile(string FileName)
         {
             if (!String.IsNullOrEmpty(FileName))
@@ -243,6 +246,7 @@ namespace Code_parser
             }
         }
 
+        //Экспорт отчета
         public void ExportReport()
         {
             string FileName = SaveDialog();
