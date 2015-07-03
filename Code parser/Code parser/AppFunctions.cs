@@ -99,7 +99,7 @@ namespace Code_parser
                     }
                 }
 
-                //Удаление коментариев /* */
+                //Удаление коментариев /* */ (первый или последний символ не удаляется)
                 if ((raw_code[i] == '/') && (raw_code[i + 1] == '*'))
                 {
                     int a = raw_code.IndexOf("*/", i + 2);
@@ -107,11 +107,21 @@ namespace Code_parser
                     i = a + 1;
                 }
 
-                //Удаление строк ""
-                if ((raw_code[i] == '\"'))
+                //Удаление строк "" (первый символ не удаляется)
+                if (raw_code[i] == '\"')
                 {
                     i++;
                     while (raw_code[i] != '\"')
+                    {
+                        i++;
+                    }
+                }
+
+                //Удаление символов '' (первый символ не удаляется)
+                if (raw_code[i] == '\'')
+                {
+                    i++;
+                    while (raw_code[i] != '\'')
                     {
                         i++;
                     }
@@ -121,16 +131,16 @@ namespace Code_parser
             }
 
             //Удаление переходов на новую строку
-            code = code.Replace("\n", String.Empty);
+            //code = code.Replace("\n", String.Empty);
 
-            //Удаление вощвратов каретки
+            //Удаление возвратов каретки
             code = code.Replace("\r", String.Empty);
 
             //Удаление Tab-ов
             code = code.Replace("\t", String.Empty);
 
             //Удаление тройных пробелов
-            code = code.Replace("   ", String.Empty);
+            //code = code.Replace("   ", String.Empty);
         }
 
         //Разбиение кода на части
@@ -239,7 +249,5 @@ namespace Code_parser
 
             CreateReportFile(FileName);
         }
-
-
     }
 }
