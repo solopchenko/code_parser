@@ -105,7 +105,7 @@ namespace Code_parser
                 {
                     int a = raw_code.IndexOf("*/", i + 2);
 
-                    i = a + 2;
+                    i = a + 1;
                 }
 
                 //Удаление строк "" (проблема с кавычками в кавычках)
@@ -121,7 +121,7 @@ namespace Code_parser
                     i++;
                 }
 
-                //Удаление символов
+                //Удаление символов ''
                 if (raw_code[i] == '\'')
                 {
                     i++;
@@ -154,17 +154,25 @@ namespace Code_parser
 
             string[] split_code = code.Split(spit_array);
 
-            foreach (var op in operators_list)
+            foreach (var item in split_code)
             {
-                foreach (var s in split_code)
+                if (operators.Keys.Contains(item))
                 {
-                    if (s.Contains(op))
-                    {
-                        operators[op] = operators[op] + 1;
-                    }
+                    operators[item]++;
                 }
-
             }
+
+            //foreach (var op in operators_list)
+            //{
+            //    foreach (var s in split_code)
+            //    {
+            //        if (s.Contains(op))
+            //        {
+            //            operators[op] = operators[op] + 1;
+            //        }
+            //    }
+
+            //}
         }
 
         //Сброс количества операторов
