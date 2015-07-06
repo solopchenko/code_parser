@@ -96,7 +96,6 @@ namespace Code_parser
                 {
                     while ((raw_code[i] != '\n') & (i < raw_code.Length - 1))
                     {
-                        raw_code.Replace(raw_code[i].ToString(), String.Empty);
                         i++;
                     }
                 }
@@ -113,7 +112,8 @@ namespace Code_parser
                 if (raw_code[i] == '\"')
                 {
                     i++;
-                    while (raw_code[i] != '\"')
+
+                    while ((raw_code[i] != '\"'))
                     {
                         i++;
                     }
@@ -140,9 +140,6 @@ namespace Code_parser
 
             //Удаление Tab-ов
             code = code.Replace("\t", String.Empty);
-
-            //Удаление тройных пробелов
-            //code = code.Replace("   ", String.Empty);
         }
 
         //Подсчет операторов
