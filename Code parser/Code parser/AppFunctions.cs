@@ -184,6 +184,7 @@ namespace Code_parser
             var fd = new SaveFileDialog();
             fd.Title = "Выберите место для сохранения отчета";
             fd.Filter = "CSV file *.csv | *.CSV";
+            fd.FileName = "Report " + DateTime.Now.ToString("dd-MM-yyyy hh-mm-ss");
 
             fd.ShowDialog();
 
