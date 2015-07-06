@@ -32,6 +32,8 @@ namespace Code_parser
             operators_list.Add("switch");
             operators_list.Add("try");
             operators_list.Add("throw");
+            operators_list.Add("finally");
+            operators_list.Add("=");
 
             operators = new Dictionary<string, int>();
             foreach (var op in operators_list)
@@ -183,6 +185,9 @@ namespace Code_parser
             //    }
 
             //}
+
+            ////Для for и foreach
+            //operators["for"] = operators["for"] - operators["foreach"];
         }
 
         //Сброс количества операторов
