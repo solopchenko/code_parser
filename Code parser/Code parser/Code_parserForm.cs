@@ -37,6 +37,7 @@ namespace Code_parser
             {
                 //Сброс статистики
                 setProgress(progressBar, prograss_label, 0);
+                f.Reset();
 
                 string FileName = f.OpenDialog();
 
