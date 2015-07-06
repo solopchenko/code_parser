@@ -45,9 +45,20 @@ namespace Code_parser
                     progress(progressBar, prograss_label, 15);
                     if (f.ReadFile(FileName))
                     {
-                        FileContent_richTextBox.Text = f.raw_code;
                         backgroundWorker.RunWorkerAsync();
-                        progress(progressBar, prograss_label, 40);
+                        FileContent_richTextBox.Text = f.raw_code;
+
+                        Random rnd = new Random();
+
+                        if (f.raw_code.Length < 2000)
+                        {
+                            progress(progressBar, prograss_label, rnd.Next(95, 98));
+                        }
+                        else
+                        {
+                            progress(progressBar, prograss_label, rnd.Next(80, 98));
+                        }
+
                     }
                 }
             }
@@ -65,7 +76,6 @@ namespace Code_parser
 
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            ExportReportToolStripMenuItem.Enabled = false;
             f.CountOperators();
         }
 
