@@ -74,9 +74,9 @@
             this.stat_grid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.stat_grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.stat_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.stat_grid.Location = new System.Drawing.Point(10, 24);
+            this.stat_grid.Location = new System.Drawing.Point(9, 19);
             this.stat_grid.Name = "stat_grid";
-            this.stat_grid.Size = new System.Drawing.Size(468, 239);
+            this.stat_grid.Size = new System.Drawing.Size(468, 225);
             this.stat_grid.TabIndex = 3;
             // 
             // stat_groupBox
@@ -84,7 +84,7 @@
             this.stat_groupBox.Controls.Add(this.stat_grid);
             this.stat_groupBox.Location = new System.Drawing.Point(12, 368);
             this.stat_groupBox.Name = "stat_groupBox";
-            this.stat_groupBox.Size = new System.Drawing.Size(487, 275);
+            this.stat_groupBox.Size = new System.Drawing.Size(487, 256);
             this.stat_groupBox.TabIndex = 3;
             this.stat_groupBox.TabStop = false;
             this.stat_groupBox.Text = "Статистика";
@@ -158,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 664);
+            this.ClientSize = new System.Drawing.Size(514, 635);
             this.Controls.Add(this.progress_groupBox);
             this.Controls.Add(this.stat_groupBox);
             this.Controls.Add(this.FileContent_groupBox);

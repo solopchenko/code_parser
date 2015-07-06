@@ -160,7 +160,7 @@ namespace Code_parser
             {
                 if (operators.Keys.Contains(item))
                 {
-                    operators[item]++;
+                    operators[item] = operators[item] + 1;
                 }
             }
 
@@ -170,7 +170,7 @@ namespace Code_parser
             {
                 if (code[i] == ';')
                 {
-                    operators[";"]++;
+                    operators[";"] = operators[";"] + 1;
                 }
             }
 
