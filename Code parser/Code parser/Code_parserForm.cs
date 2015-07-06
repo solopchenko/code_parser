@@ -60,24 +60,24 @@ namespace Code_parser
 
         private void ExportReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //f.CountOperators();
+            f.ExportReport();
         }
 
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
+            ExportReportToolStripMenuItem.Enabled = false;
             f.CountOperators();
         }
 
         private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-
             if (e.Cancelled == true)
             {
-                MessageBox.Show("Canceled");
+                MessageBox.Show("Операция прервана.");
             }
             else if (e.Error != null)
             {
-                MessageBox.Show("Error: " + e.Error.Message);
+                MessageBox.Show("Ошибка: " + e.Error.Message);
             }
             else
             {
