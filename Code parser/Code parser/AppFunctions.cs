@@ -10,7 +10,6 @@ namespace Code_parser
 {
     public class AppFunctions
     {
-
         public List<string> operators_list; 
 
         public Dictionary<string, int> operators {get; private set;}
@@ -106,17 +105,8 @@ namespace Code_parser
                 {
                     int a = raw_code.IndexOf("*/", i + 2);
 
-                    i = a + 2;
+                    i = a + 1;
                 }
-
-                //int k = raw_code.IndexOf("/*", i);
-                //if ((k > 0))
-                //{
-                //    while ( (raw_code.IndexOf("*/", k) > 0) && (i < raw_code.Length - 1) )
-                //    {
-                //        i++;
-                //    }
-                //}
 
                 //Удаление строк "" (первый символ не удаляется)
                 if (raw_code[i] == '\"')
@@ -262,13 +252,6 @@ namespace Code_parser
             string FileName = SaveDialog();
 
             CreateReportFile(FileName);
-        }
-
-        public void ShowProgress(ProgressBar pg, int max, int value)
-        {
-            pg.Maximum = max;
-            pg.Value = value;
-            pg.Step = 1;
         }
     }
 }

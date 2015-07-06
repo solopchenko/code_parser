@@ -33,7 +33,7 @@
             this.stat_grid = new System.Windows.Forms.DataGridView();
             this.stat_groupBox = new System.Windows.Forms.GroupBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Open_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExportReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FileContent_groupBox.SuspendLayout();
@@ -87,21 +87,21 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FileToolStripMenuItem});
+            this.файлToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(514, 24);
             this.menuStrip.TabIndex = 4;
             this.menuStrip.Text = "menuStrip1";
             // 
-            // FileToolStripMenuItem
+            // файлToolStripMenuItem
             // 
-            this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Open_ToolStripMenuItem,
             this.ExportReportToolStripMenuItem});
-            this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
-            this.FileToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.FileToolStripMenuItem.Text = "Файл";
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Text = "Файл";
             // 
             // Open_ToolStripMenuItem
             // 
@@ -121,11 +121,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 530);
+            this.ClientSize = new System.Drawing.Size(514, 573);
             this.Controls.Add(this.stat_groupBox);
             this.Controls.Add(this.FileContent_groupBox);
             this.Controls.Add(this.menuStrip);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
             this.Name = "Code_parserForm";
@@ -147,7 +147,7 @@
         private System.Windows.Forms.DataGridView stat_grid;
         private System.Windows.Forms.GroupBox stat_groupBox;
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Open_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExportReportToolStripMenuItem;
     }
