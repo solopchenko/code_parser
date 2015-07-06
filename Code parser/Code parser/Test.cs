@@ -66,6 +66,11 @@ namespace Code_parser
                 MessageBox.Show("Сообщение");
             }
 
+            if (5 == 2)
+            {
+                MessageBox.Show("5 = 2");
+            }
+
             int num = 0;
             switch (num)
             {
