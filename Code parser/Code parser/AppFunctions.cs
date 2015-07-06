@@ -150,7 +150,7 @@ namespace Code_parser
         {
             RemoveCommentsAndStrings();
 
-            char[] spit_array = { ' ', '\n', '\r' };
+            char[] spit_array = { ' ', '\n' };
 
             string[] split_code = code.Split(spit_array);
 
@@ -159,6 +159,16 @@ namespace Code_parser
                 if (operators.Keys.Contains(item))
                 {
                     operators[item]++;
+                }
+            }
+
+            //Для ;
+            operators[";"] = 0;
+            for (int i = 0; i < code.Length; i++)
+            {
+                if (code[i] == ';')
+                {
+                    operators[";"]++;
                 }
             }
 
