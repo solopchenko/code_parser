@@ -79,4 +79,5 @@ namespace Test
 	throw: 2
 	=: 5
 	switch: 1
+    ;:18
 */
