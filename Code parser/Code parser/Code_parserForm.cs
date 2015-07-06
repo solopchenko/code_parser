@@ -29,43 +29,73 @@ namespace Code_parser
             stat_grid.BorderStyle = BorderStyle.None;
 
             stat_grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            progressBar.Value = 0;
         }
 
         private void Open_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            string FileName = f.OpenDialog();
-
-            if (!String.IsNullOrEmpty(FileName))
+            if (backgroundWorker.IsBusy != true)
             {
-                if (f.ReadFile(FileName))
+                progress(progressBar, prograss_label, 0);
+                string FileName = f.OpenDialog();
+
+                if (!String.IsNullOrEmpty(FileName))
                 {
-                    FileContent_richTextBox.Text = f.raw_code;
-                    backgroundWorker.RunWorkerAsync();
+                    progress(progressBar, prograss_label, 15);
+                    if (f.ReadFile(FileName))
+                    {
+                        FileContent_richTextBox.Text = f.raw_code;
+                        backgroundWorker.RunWorkerAsync();
+                        progress(progressBar, prograss_label, 40);
+                    }
                 }
             }
 
-
+            else
+            {
+                MessageBox.Show("Дождитесь окончания предыдущей операции проверки файла.", "Операция не может быть выполнена", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void ExportReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            f.CountOperators();
+            //f.CountOperators();
         }
 
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            //f.AnalyzeCode();
-
             f.CountOperators();
         }
 
         private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            stat_grid.DataSource = f.operators.ToList();
 
-            stat_grid.Columns[0].HeaderText = "Оператор";
-            stat_grid.Columns[1].HeaderText = "Количество";
+            if (e.Cancelled == true)
+            {
+                MessageBox.Show("Canceled");
+            }
+            else if (e.Error != null)
+            {
+                MessageBox.Show("Error: " + e.Error.Message);
+            }
+            else
+            {
+                progress(progressBar, prograss_label, 100);
+
+                stat_grid.DataSource = f.operators.ToList();
+
+                stat_grid.Columns[0].HeaderText = "Оператор";
+                stat_grid.Columns[1].HeaderText = "Количество";
+            }
+
+
+        }
+
+        public void progress(ProgressBar pg, Label lb, int value)
+        {
+            pg.Value = value;
+            lb.Text = value.ToString() + "%";
         }
     }
 }

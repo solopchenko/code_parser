@@ -37,10 +37,14 @@
             this.Open_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExportReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.progress_groupBox = new System.Windows.Forms.GroupBox();
+            this.prograss_label = new System.Windows.Forms.Label();
             this.FileContent_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).BeginInit();
             this.stat_groupBox.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            this.progress_groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // FileContent_richTextBox
@@ -78,7 +82,7 @@
             // stat_groupBox
             // 
             this.stat_groupBox.Controls.Add(this.stat_grid);
-            this.stat_groupBox.Location = new System.Drawing.Point(12, 243);
+            this.stat_groupBox.Location = new System.Drawing.Point(12, 345);
             this.stat_groupBox.Name = "stat_groupBox";
             this.stat_groupBox.Size = new System.Drawing.Size(487, 271);
             this.stat_groupBox.TabIndex = 3;
@@ -123,11 +127,39 @@
             this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
             this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
             // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(9, 31);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(431, 23);
+            this.progressBar.TabIndex = 5;
+            // 
+            // progress_groupBox
+            // 
+            this.progress_groupBox.Controls.Add(this.prograss_label);
+            this.progress_groupBox.Controls.Add(this.progressBar);
+            this.progress_groupBox.Location = new System.Drawing.Point(12, 250);
+            this.progress_groupBox.Name = "progress_groupBox";
+            this.progress_groupBox.Size = new System.Drawing.Size(487, 79);
+            this.progress_groupBox.TabIndex = 6;
+            this.progress_groupBox.TabStop = false;
+            this.progress_groupBox.Text = "Анализ файла...";
+            // 
+            // prograss_label
+            // 
+            this.prograss_label.AutoSize = true;
+            this.prograss_label.Location = new System.Drawing.Point(446, 37);
+            this.prograss_label.Name = "prograss_label";
+            this.prograss_label.Size = new System.Drawing.Size(21, 13);
+            this.prograss_label.TabIndex = 6;
+            this.prograss_label.Text = "0%";
+            // 
             // Code_parserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 530);
+            this.ClientSize = new System.Drawing.Size(514, 637);
+            this.Controls.Add(this.progress_groupBox);
             this.Controls.Add(this.stat_groupBox);
             this.Controls.Add(this.FileContent_groupBox);
             this.Controls.Add(this.menuStrip);
@@ -141,6 +173,8 @@
             this.stat_groupBox.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.progress_groupBox.ResumeLayout(false);
+            this.progress_groupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +191,9 @@
         private System.Windows.Forms.ToolStripMenuItem Open_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExportReportToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.GroupBox progress_groupBox;
+        private System.Windows.Forms.Label prograss_label;
     }
 }
 
