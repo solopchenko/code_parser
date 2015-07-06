@@ -33,9 +33,10 @@
             this.stat_grid = new System.Windows.Forms.DataGridView();
             this.stat_groupBox = new System.Windows.Forms.GroupBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Open_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExportReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.FileContent_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).BeginInit();
             this.stat_groupBox.SuspendLayout();
@@ -87,21 +88,21 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
+            this.FileToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(514, 24);
             this.menuStrip.TabIndex = 4;
             this.menuStrip.Text = "menuStrip1";
             // 
-            // файлToolStripMenuItem
+            // FileToolStripMenuItem
             // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Open_ToolStripMenuItem,
             this.ExportReportToolStripMenuItem});
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.файлToolStripMenuItem.Text = "Файл";
+            this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.FileToolStripMenuItem.Text = "Файл";
             // 
             // Open_ToolStripMenuItem
             // 
@@ -117,15 +118,20 @@
             this.ExportReportToolStripMenuItem.Text = "Сохранить отчет";
             this.ExportReportToolStripMenuItem.Click += new System.EventHandler(this.ExportReportToolStripMenuItem_Click);
             // 
+            // backgroundWorker
+            // 
+            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
+            this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
+            // 
             // Code_parserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 573);
+            this.ClientSize = new System.Drawing.Size(514, 530);
             this.Controls.Add(this.stat_groupBox);
             this.Controls.Add(this.FileContent_groupBox);
             this.Controls.Add(this.menuStrip);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
             this.Name = "Code_parserForm";
@@ -147,9 +153,10 @@
         private System.Windows.Forms.DataGridView stat_grid;
         private System.Windows.Forms.GroupBox stat_groupBox;
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Open_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExportReportToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
     }
 }
 

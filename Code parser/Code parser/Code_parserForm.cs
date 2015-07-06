@@ -33,19 +33,39 @@ namespace Code_parser
 
         private void Open_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            f.AnalyzeCode();
 
-            FileContent_richTextBox.Text = f.raw_code;
+            string FileName = f.OpenDialog();
 
-            stat_grid.DataSource = f.operators.ToList();
+            if (!String.IsNullOrEmpty(FileName))
+            {
+                if (f.ReadFile(FileName))
+                {
+                    FileContent_richTextBox.Text = f.raw_code;
+                    backgroundWorker.RunWorkerAsync();
+                }
+            }
 
-            stat_grid.Columns[0].HeaderText = "Оператор";
-            stat_grid.Columns[1].HeaderText = "Количество";
+
         }
 
         private void ExportReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            f.ExportReport();
+            f.CountOperators();
+        }
+
+        private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            //f.AnalyzeCode();
+
+            f.CountOperators();
+        }
+
+        private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            stat_grid.DataSource = f.operators.ToList();
+
+            stat_grid.Columns[0].HeaderText = "Оператор";
+            stat_grid.Columns[1].HeaderText = "Количество";
         }
     }
 }

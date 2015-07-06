@@ -101,22 +101,13 @@ namespace Code_parser
                     }
                 }
 
-                //Удаление коментариев /* */ (первый или последний символ не удаляется)
+                //Удаление коментариев /* */
                 if ((raw_code[i] == '/') && (raw_code[i + 1] == '*'))
                 {
                     int a = raw_code.IndexOf("*/", i + 2);
 
                     i = a + 2;
                 }
-
-                //int k = raw_code.IndexOf("/*", i);
-                //if ((k > 0))
-                //{
-                //    while ( (raw_code.IndexOf("*/", k) > 0) && (i < raw_code.Length - 1) )
-                //    {
-                //        i++;
-                //    }
-                //}
 
                 //Удаление строк "" (первый символ не удаляется)
                 if (raw_code[i] == '\"')
@@ -154,21 +145,14 @@ namespace Code_parser
             //code = code.Replace("   ", String.Empty);
         }
 
-        //Разбиение кода на части
-        public string[] SplitCode()
+        //Подсчет операторов
+        public void CountOperators()
         {
             RemoveCommentsAndStrings();
 
             char[] spit_array = { ' ', '\n', '\r' };
 
-            string[] s_code = code.Split(spit_array);
-
-            return s_code;
-        }
-
-        //Подсчет операторов
-        public void CountOperators(string[] split_code)
-        {
+            string[] split_code = code.Split(spit_array);
 
             foreach (var op in operators_list)
             {
@@ -195,28 +179,6 @@ namespace Code_parser
             raw_code = String.Empty;
 
             code = String.Empty;
-        }
-
-        //Анализ кода
-        public void AnalyzeCode()
-        {
-            Reset();
-
-            string fileName = OpenDialog();
-
-            if (!String.IsNullOrEmpty(fileName))
-            {
-                if (ReadFile(fileName))
-                {
-                    string[] s_code = SplitCode();
-
-                    CountOperators(s_code);
-                }
-                else
-                {
-                    return;
-                }
-            }
         }
 
         //Выбор места сохранения файлов
