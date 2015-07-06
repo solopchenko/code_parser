@@ -55,7 +55,7 @@
             this.FileContent_richTextBox.Location = new System.Drawing.Point(9, 29);
             this.FileContent_richTextBox.Name = "FileContent_richTextBox";
             this.FileContent_richTextBox.ReadOnly = true;
-            this.FileContent_richTextBox.Size = new System.Drawing.Size(468, 145);
+            this.FileContent_richTextBox.Size = new System.Drawing.Size(468, 174);
             this.FileContent_richTextBox.TabIndex = 1;
             this.FileContent_richTextBox.Text = "";
             // 
@@ -64,7 +64,7 @@
             this.FileContent_groupBox.Controls.Add(this.FileContent_richTextBox);
             this.FileContent_groupBox.Location = new System.Drawing.Point(12, 37);
             this.FileContent_groupBox.Name = "FileContent_groupBox";
-            this.FileContent_groupBox.Size = new System.Drawing.Size(487, 189);
+            this.FileContent_groupBox.Size = new System.Drawing.Size(487, 215);
             this.FileContent_groupBox.TabIndex = 2;
             this.FileContent_groupBox.TabStop = false;
             this.FileContent_groupBox.Text = "Содержимое файла";
@@ -74,17 +74,17 @@
             this.stat_grid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.stat_grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.stat_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.stat_grid.Location = new System.Drawing.Point(9, 24);
+            this.stat_grid.Location = new System.Drawing.Point(10, 24);
             this.stat_grid.Name = "stat_grid";
-            this.stat_grid.Size = new System.Drawing.Size(468, 241);
+            this.stat_grid.Size = new System.Drawing.Size(468, 239);
             this.stat_grid.TabIndex = 3;
             // 
             // stat_groupBox
             // 
             this.stat_groupBox.Controls.Add(this.stat_grid);
-            this.stat_groupBox.Location = new System.Drawing.Point(12, 345);
+            this.stat_groupBox.Location = new System.Drawing.Point(12, 368);
             this.stat_groupBox.Name = "stat_groupBox";
-            this.stat_groupBox.Size = new System.Drawing.Size(487, 271);
+            this.stat_groupBox.Size = new System.Drawing.Size(487, 275);
             this.stat_groupBox.TabIndex = 3;
             this.stat_groupBox.TabStop = false;
             this.stat_groupBox.Text = "Статистика";
@@ -138,7 +138,7 @@
             // 
             this.progress_groupBox.Controls.Add(this.prograss_label);
             this.progress_groupBox.Controls.Add(this.progressBar);
-            this.progress_groupBox.Location = new System.Drawing.Point(12, 250);
+            this.progress_groupBox.Location = new System.Drawing.Point(12, 273);
             this.progress_groupBox.Name = "progress_groupBox";
             this.progress_groupBox.Size = new System.Drawing.Size(487, 79);
             this.progress_groupBox.TabIndex = 6;
@@ -158,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 637);
+            this.ClientSize = new System.Drawing.Size(514, 664);
             this.Controls.Add(this.progress_groupBox);
             this.Controls.Add(this.stat_groupBox);
             this.Controls.Add(this.FileContent_groupBox);
