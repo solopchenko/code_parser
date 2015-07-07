@@ -21,17 +21,14 @@ namespace Code_parser
             main = m;
 
             operators_grid.GridColor = Color.Black;
-            operators_grid.RowHeadersVisible = false;
+            //operators_grid.RowHeadersVisible = false;
             operators_grid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             operators_grid.BorderStyle = BorderStyle.None;
             operators_grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             operators_grid.Columns.Add("operators", "Операторы");
 
-            foreach (var op in main.operators.operators_list)
-            {
-                operators_grid.Rows.Add(op);
-            }
+            RefreshGrid(operators_grid, main.operators.operators_list);
 
             operators_grid.Columns[0].DefaultCellStyle.DataSourceNullValue = " ";
         }
@@ -50,6 +47,22 @@ namespace Code_parser
             main.operators.SetOperators(new_operators);
 
             this.Close();
+        }
+
+        private void standartOperators_btn_Click(object sender, EventArgs e)
+        {
+            main.operators.SetDefaultOperators();
+
+            RefreshGrid(operators_grid, main.operators.operators_list);
+        }
+
+        private void RefreshGrid(DataGridView dgv, List<string> source)
+        {
+            dgv.Rows.Clear();
+            foreach (var item in source)
+            {
+                dgv.Rows.Add(item);
+            }
         }
     }
 }

@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppFunctions.cs" />
     <Compile Include="Code.cs" />
     <Compile Include="Forms\Code_parserForm.cs">
       <SubType>Form</SubType>

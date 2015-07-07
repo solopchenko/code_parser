@@ -30,6 +30,7 @@
         {
             this.operators_grid = new System.Windows.Forms.DataGridView();
             this.saveOperatorsSettings_btn = new System.Windows.Forms.Button();
+            this.standartOperators_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.operators_grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,16 +53,27 @@
             this.saveOperatorsSettings_btn.UseVisualStyleBackColor = true;
             this.saveOperatorsSettings_btn.Click += new System.EventHandler(this.saveOperatorsSettings_btn_Click);
             // 
+            // standartOperators_btn
+            // 
+            this.standartOperators_btn.Location = new System.Drawing.Point(242, 333);
+            this.standartOperators_btn.Name = "standartOperators_btn";
+            this.standartOperators_btn.Size = new System.Drawing.Size(157, 23);
+            this.standartOperators_btn.TabIndex = 2;
+            this.standartOperators_btn.Text = "Операторы по умолчанию";
+            this.standartOperators_btn.UseVisualStyleBackColor = true;
+            this.standartOperators_btn.Click += new System.EventHandler(this.standartOperators_btn_Click);
+            // 
             // OperatorsSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 365);
+            this.Controls.Add(this.standartOperators_btn);
             this.Controls.Add(this.saveOperatorsSettings_btn);
             this.Controls.Add(this.operators_grid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "OperatorsSettings";
-            this.Text = "OperatorsSettings";
+            this.Text = "Настройка операторов";
             ((System.ComponentModel.ISupportInitialize)(this.operators_grid)).EndInit();
             this.ResumeLayout(false);
 
@@ -71,5 +83,6 @@
 
         private System.Windows.Forms.DataGridView operators_grid;
         private System.Windows.Forms.Button saveOperatorsSettings_btn;
+        private System.Windows.Forms.Button standartOperators_btn;
     }
 }

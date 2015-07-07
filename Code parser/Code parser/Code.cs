@@ -131,15 +131,18 @@ namespace Code_parser
                 }
             }
 
-            ////Для расчета количества ;
-            //o.operators_dic[";"] = 0;
-            //for (int i = 0; i < code.Length; i++)
-            //{
-            //    if (code[i] == ';')
-            //    {
-            //        o.operators_dic[";"] = o.operators_dic[";"] + 1;
-            //    }
-            //}
+            //Для расчета количества ;
+            if (o.operators_dic.ContainsKey(";"))
+            {
+                o.operators_dic[";"] = 0;
+                for (int i = 0; i < code.Length; i++)
+                {
+                    if (code[i] == ';')
+                    {
+                        o.operators_dic[";"] = o.operators_dic[";"] + 1;
+                    }
+                }
+            }
         }
     }
 }

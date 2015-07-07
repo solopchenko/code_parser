@@ -49,18 +49,8 @@ namespace Code_parser
 
             catch
             {
-                //Стандартный набор операторов
-                List<string> standart = new List<string>();
-                standart.Add("if");
-                standart.Add("for");
-                standart.Add("foreach");
-                standart.Add("while");
-                standart.Add("switch");
-                standart.Add("try");
-                standart.Add("finally");
-                standart.Add("=");
 
-                SetOperators(standart);
+                SetDefaultOperators();
 
                 MessageBox.Show("Не удалось загрузить файл настроек.\nВозможно доступ к файлу запрещен. Либо файл отсутсвует.\nПрименен стандарнтный набор операторов. ", "Не удалось загрузить настройки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -96,57 +86,29 @@ namespace Code_parser
             }
         }
 
+        //Установка стандартных операторов
+        public void SetDefaultOperators()
+        {
+            //Стандартный набор операторов
+            List<string> default_operators = new List<string>();
+            default_operators.Add("if");
+            default_operators.Add("for");
+            default_operators.Add("foreach");
+            default_operators.Add("while");
+            default_operators.Add("switch");
+            default_operators.Add("try");
+            default_operators.Add("finally");
+            default_operators.Add("=");
+
+            SetOperators(default_operators);
+        }
+
         //Сброс счетчиков операторов
         public void ResetOperatorsCount()
         {
             foreach (var item in operators_list)
             {
                 operators_dic[item] = 0;
-            }
-        }
-
-        //Чтение из файла
-        public void ReadFromFile()
-        {
-            try
-            {
-                using (System.IO.StreamReader reader = new System.IO.StreamReader(config_path))
-                {
-                    string line;
-
-                    //Очистка старого списка
-                    operators_list.Clear();
-                    operators_dic.Clear();
-
-                    List<string> file_operators = new List<string>();
-
-                    //Добавление операторов из файла в список
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        file_operators.Add(line);
-                    }
-
-                    //Добавление операторов из списка в структуру
-                    SetOperators(file_operators);
-                }
-            }
-
-            catch
-            {
-                //Стандартный набор операторов
-                List<string> standart = new List<string>();
-                standart.Add("if");
-                standart.Add("for");
-                standart.Add("foreach");
-                standart.Add("while");
-                standart.Add("switch");
-                standart.Add("try");
-                standart.Add("finally");
-                standart.Add("=");
-
-                SetOperators(standart);
-
-                MessageBox.Show("Не удалось загрузить файл настроек.\nВозможно доступ к файлу запрещен. Либо файл отсутсвует.\nПрименен стандарнтный набор операторов. ", "Не удалось загрузить настройки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }
