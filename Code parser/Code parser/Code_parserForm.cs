@@ -47,7 +47,7 @@ namespace Code_parser
                     if (f.ReadFile(FileName))
                     {
                         backgroundWorker.RunWorkerAsync();
-                        FileContent_richTextBox.Text = f.raw_code;
+                        fileContent_richTextBox.Text = f.raw_code;
 
                         //Статистика
                         Random rnd = new Random();

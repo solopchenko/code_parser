@@ -28,46 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FileContent_richTextBox = new System.Windows.Forms.RichTextBox();
-            this.FileContent_groupBox = new System.Windows.Forms.GroupBox();
+            this.fileContent_richTextBox = new System.Windows.Forms.RichTextBox();
+            this.fileContent_groupBox = new System.Windows.Forms.GroupBox();
             this.stat_grid = new System.Windows.Forms.DataGridView();
             this.stat_groupBox = new System.Windows.Forms.GroupBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Open_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ExportReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.file_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.open_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportReport_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.progress_groupBox = new System.Windows.Forms.GroupBox();
             this.prograss_label = new System.Windows.Forms.Label();
-            this.FileContent_groupBox.SuspendLayout();
+            this.settings_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.operatorsSettings_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileContent_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).BeginInit();
             this.stat_groupBox.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.progress_groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // FileContent_richTextBox
+            // fileContent_richTextBox
             // 
-            this.FileContent_richTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FileContent_richTextBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.FileContent_richTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FileContent_richTextBox.Location = new System.Drawing.Point(9, 29);
-            this.FileContent_richTextBox.Name = "FileContent_richTextBox";
-            this.FileContent_richTextBox.ReadOnly = true;
-            this.FileContent_richTextBox.Size = new System.Drawing.Size(468, 174);
-            this.FileContent_richTextBox.TabIndex = 1;
-            this.FileContent_richTextBox.Text = "";
+            this.fileContent_richTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fileContent_richTextBox.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.fileContent_richTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fileContent_richTextBox.Location = new System.Drawing.Point(9, 29);
+            this.fileContent_richTextBox.Name = "fileContent_richTextBox";
+            this.fileContent_richTextBox.ReadOnly = true;
+            this.fileContent_richTextBox.Size = new System.Drawing.Size(468, 174);
+            this.fileContent_richTextBox.TabIndex = 1;
+            this.fileContent_richTextBox.Text = "";
             // 
-            // FileContent_groupBox
+            // fileContent_groupBox
             // 
-            this.FileContent_groupBox.Controls.Add(this.FileContent_richTextBox);
-            this.FileContent_groupBox.Location = new System.Drawing.Point(12, 37);
-            this.FileContent_groupBox.Name = "FileContent_groupBox";
-            this.FileContent_groupBox.Size = new System.Drawing.Size(487, 215);
-            this.FileContent_groupBox.TabIndex = 2;
-            this.FileContent_groupBox.TabStop = false;
-            this.FileContent_groupBox.Text = "Содержимое файла";
+            this.fileContent_groupBox.Controls.Add(this.fileContent_richTextBox);
+            this.fileContent_groupBox.Location = new System.Drawing.Point(12, 37);
+            this.fileContent_groupBox.Name = "fileContent_groupBox";
+            this.fileContent_groupBox.Size = new System.Drawing.Size(487, 215);
+            this.fileContent_groupBox.TabIndex = 2;
+            this.fileContent_groupBox.TabStop = false;
+            this.fileContent_groupBox.Text = "Содержимое файла";
             // 
             // stat_grid
             // 
@@ -92,35 +94,36 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FileToolStripMenuItem});
+            this.file_ToolStripMenuItem,
+            this.settings_ToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(514, 24);
             this.menuStrip.TabIndex = 4;
             this.menuStrip.Text = "menuStrip1";
             // 
-            // FileToolStripMenuItem
+            // file_ToolStripMenuItem
             // 
-            this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Open_ToolStripMenuItem,
-            this.ExportReportToolStripMenuItem});
-            this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
-            this.FileToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.FileToolStripMenuItem.Text = "Файл";
+            this.file_ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.open_ToolStripMenuItem,
+            this.exportReport_ToolStripMenuItem});
+            this.file_ToolStripMenuItem.Name = "file_ToolStripMenuItem";
+            this.file_ToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.file_ToolStripMenuItem.Text = "Файл";
             // 
-            // Open_ToolStripMenuItem
+            // open_ToolStripMenuItem
             // 
-            this.Open_ToolStripMenuItem.Name = "Open_ToolStripMenuItem";
-            this.Open_ToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.Open_ToolStripMenuItem.Text = "Открыть";
-            this.Open_ToolStripMenuItem.Click += new System.EventHandler(this.Open_ToolStripMenuItem_Click);
+            this.open_ToolStripMenuItem.Name = "open_ToolStripMenuItem";
+            this.open_ToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.open_ToolStripMenuItem.Text = "Открыть";
+            this.open_ToolStripMenuItem.Click += new System.EventHandler(this.Open_ToolStripMenuItem_Click);
             // 
-            // ExportReportToolStripMenuItem
+            // exportReport_ToolStripMenuItem
             // 
-            this.ExportReportToolStripMenuItem.Name = "ExportReportToolStripMenuItem";
-            this.ExportReportToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.ExportReportToolStripMenuItem.Text = "Сохранить отчет";
-            this.ExportReportToolStripMenuItem.Click += new System.EventHandler(this.ExportReportToolStripMenuItem_Click);
+            this.exportReport_ToolStripMenuItem.Name = "exportReport_ToolStripMenuItem";
+            this.exportReport_ToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.exportReport_ToolStripMenuItem.Text = "Сохранить отчет";
+            this.exportReport_ToolStripMenuItem.Click += new System.EventHandler(this.ExportReportToolStripMenuItem_Click);
             // 
             // backgroundWorker
             // 
@@ -154,6 +157,20 @@
             this.prograss_label.TabIndex = 6;
             this.prograss_label.Text = "0%";
             // 
+            // settings_ToolStripMenuItem
+            // 
+            this.settings_ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.operatorsSettings_ToolStripMenuItem});
+            this.settings_ToolStripMenuItem.Name = "settings_ToolStripMenuItem";
+            this.settings_ToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.settings_ToolStripMenuItem.Text = "Настройки";
+            // 
+            // operatorsSettings_ToolStripMenuItem
+            // 
+            this.operatorsSettings_ToolStripMenuItem.Name = "operatorsSettings_ToolStripMenuItem";
+            this.operatorsSettings_ToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.operatorsSettings_ToolStripMenuItem.Text = "Настройка операторов";
+            // 
             // Code_parserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,14 +178,14 @@
             this.ClientSize = new System.Drawing.Size(514, 635);
             this.Controls.Add(this.progress_groupBox);
             this.Controls.Add(this.stat_groupBox);
-            this.Controls.Add(this.FileContent_groupBox);
+            this.Controls.Add(this.fileContent_groupBox);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
             this.Name = "Code_parserForm";
             this.Text = "Code parser";
-            this.FileContent_groupBox.ResumeLayout(false);
+            this.fileContent_groupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).EndInit();
             this.stat_groupBox.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
@@ -182,18 +199,20 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox FileContent_richTextBox;
-        private System.Windows.Forms.GroupBox FileContent_groupBox;
+        private System.Windows.Forms.RichTextBox fileContent_richTextBox;
+        private System.Windows.Forms.GroupBox fileContent_groupBox;
         private System.Windows.Forms.DataGridView stat_grid;
         private System.Windows.Forms.GroupBox stat_groupBox;
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem Open_ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ExportReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem file_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem open_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportReport_ToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.GroupBox progress_groupBox;
         private System.Windows.Forms.Label prograss_label;
+        private System.Windows.Forms.ToolStripMenuItem settings_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem operatorsSettings_ToolStripMenuItem;
     }
 }
 
