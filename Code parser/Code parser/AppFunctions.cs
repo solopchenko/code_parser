@@ -162,7 +162,7 @@ namespace Code_parser
                 }
             }
 
-            //Для ;
+            //Для расчета количества ;
             operators[";"] = 0;
             for (int i = 0; i < code.Length; i++)
             {
@@ -171,21 +171,6 @@ namespace Code_parser
                     operators[";"] = operators[";"] + 1;
                 }
             }
-
-            //foreach (var op in operators_list)
-            //{
-            //    foreach (var s in split_code)
-            //    {
-            //        if (s.Contains(op))
-            //        {
-            //            operators[op] = operators[op] + 1;
-            //        }
-            //    }
-
-            //}
-
-            ////Для for и foreach //НЕ УНИВЕРСАЛЬНО, так как есть слова типа Form
-            //operators["for"] = operators["for"] - operators["foreach"];
         }
 
         //Сброс количества операторов
