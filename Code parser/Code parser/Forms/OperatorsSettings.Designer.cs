@@ -50,6 +50,7 @@
             this.saveOperatorsSettings_btn.TabIndex = 1;
             this.saveOperatorsSettings_btn.Text = "Сохранить";
             this.saveOperatorsSettings_btn.UseVisualStyleBackColor = true;
+            this.saveOperatorsSettings_btn.Click += new System.EventHandler(this.saveOperatorsSettings_btn_Click);
             // 
             // OperatorsSettings
             // 

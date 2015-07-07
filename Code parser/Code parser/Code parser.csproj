@@ -45,17 +45,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppFunctions.cs" />
-    <Compile Include="Code_parserForm.cs">
+    <Compile Include="Code.cs" />
+    <Compile Include="Forms\Code_parserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Code_parserForm.Designer.cs">
+    <Compile Include="Forms\Code_parserForm.Designer.cs">
       <DependentUpon>Code_parserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs" />
+    <Compile Include="Operators.cs" />
+    <Compile Include="Forms\OperatorsSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OperatorsSettings.Designer.cs">
+      <DependentUpon>OperatorsSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test.cs" />
-    <EmbeddedResource Include="Code_parserForm.resx">
+    <EmbeddedResource Include="Forms\Code_parserForm.resx">
       <DependentUpon>Code_parserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OperatorsSettings.resx">
+      <DependentUpon>OperatorsSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,6 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="config\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
