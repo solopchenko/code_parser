@@ -137,9 +137,6 @@ namespace Code_parser
                 code = code + raw_code[i];
             }
 
-            //Удаление переходов на новую строку
-            //code = code.Replace("\n", String.Empty);
-
             //Удаление возвратов каретки
             code = code.Replace("\r", String.Empty);
 
@@ -152,9 +149,10 @@ namespace Code_parser
         {
             RemoveCommentsAndStrings();
 
-            char[] spit_array = { ' ', '\n' };
+            char[] spit_array = { ' ', '\n', ';' };
 
             string[] split_code = code.Split(spit_array);
+
 
             foreach (var item in split_code)
             {
@@ -186,7 +184,7 @@ namespace Code_parser
 
             //}
 
-            ////Для for и foreach
+            ////Для for и foreach //НЕ УНИВЕРСАЛЬНО, так как есть слова типа Form
             //operators["for"] = operators["for"] - operators["foreach"];
         }
 
