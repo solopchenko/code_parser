@@ -119,6 +119,7 @@ namespace Code_parser
             lb.Text = value.ToString() + "%";
         }
 
+        //Настройка операторов
         private void operatorsSettings_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OperatorsSettings OperatorsSettingsForm = new OperatorsSettings(main);
