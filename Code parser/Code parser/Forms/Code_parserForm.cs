@@ -43,7 +43,7 @@ namespace Code_parser
                 main.Reset();
 
 
-                string fileName = main.OpenDialog("C# code *.cs | *.CS");
+                string fileName = main.OpenDialog("Выберите файл с исходным кодом","C# code *.cs | *.CS");
 
 
                 if (!String.IsNullOrEmpty(fileName))
@@ -78,7 +78,9 @@ namespace Code_parser
         //Экспорт отчета
         private void ExportReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //f.ExportReport();
+            string fileName = main.SaveDialog("Выберите место для сохранения отчета", "CSV file *.csv | *.CSV", "Report");
+
+            main.operators.CreateReport(fileName);
         }
 
         //Тело нити

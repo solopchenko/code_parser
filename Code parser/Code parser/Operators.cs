@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +10,11 @@ namespace Code_parser
 {
     public class Operators
     {
-        public List<string> operators_list;
+        public List<string> operators_list {get; private set; }
 
         public Dictionary<string, int> operators_dic { get; private set; }
 
-        public string config_path;
+        private string config_path;
 
         public Operators()
         {
@@ -111,6 +112,31 @@ namespace Code_parser
             foreach (var item in operators_list)
             {
                 operators_dic[item] = 0;
+            }
+        }
+
+        //Создание отчета
+        public void CreateReport(string fileName)
+        {
+            if (!String.IsNullOrEmpty(fileName))
+            {
+                try
+                {
+                    using (StreamWriter writer = new StreamWriter(fileName, false))
+                    {
+                        writer.WriteLine("Оператор;Количество");
+                        foreach (var item in operators_list)
+                        {
+                            writer.WriteLine(item + ";" + operators_dic[item]);
+                        }
+                        writer.Close();
+                    }
+                }
+
+                catch
+                {
+                    MessageBox.Show("Не удалось сохранить файл.\nВозможно доступ к папке запрещен.", "Ошибка сохранения файла", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

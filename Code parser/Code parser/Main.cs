@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,10 +20,10 @@ namespace Code_parser
         }
 
         //Выбор файла
-        public string OpenDialog(string filter)
+        public string OpenDialog(string title, string filter)
         {
             var fd = new OpenFileDialog();
-            fd.Title = "Выберите файл";
+            fd.Title = title;
             fd.Filter = filter;
 
             fd.ShowDialog();
@@ -34,6 +35,19 @@ namespace Code_parser
         {
             operators.ResetOperatorsCount();
             code.ResetCode();
+        }
+
+        public string SaveDialog(string title, string filter, string fileName)
+        {
+            var fd = new SaveFileDialog();
+            fd.Title = title; 
+            fd.Filter = filter;
+            fd.FileName = fileName + " " + DateTime.Now.ToString("dd-MM-yyyy hh-mm-ss");
+
+
+            fd.ShowDialog();
+
+            return fd.FileName;
         }
     }
 }
