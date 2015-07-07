@@ -36,12 +36,12 @@
             this.file_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.open_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportReport_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settings_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.operatorsSettings_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.progress_groupBox = new System.Windows.Forms.GroupBox();
             this.prograss_label = new System.Windows.Forms.Label();
-            this.settings_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.operatorsSettings_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileContent_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).BeginInit();
             this.stat_groupBox.SuspendLayout();
@@ -114,16 +114,34 @@
             // open_ToolStripMenuItem
             // 
             this.open_ToolStripMenuItem.Name = "open_ToolStripMenuItem";
-            this.open_ToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.open_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.open_ToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.open_ToolStripMenuItem.Text = "Открыть";
             this.open_ToolStripMenuItem.Click += new System.EventHandler(this.Open_ToolStripMenuItem_Click);
             // 
             // exportReport_ToolStripMenuItem
             // 
             this.exportReport_ToolStripMenuItem.Name = "exportReport_ToolStripMenuItem";
-            this.exportReport_ToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.exportReport_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.exportReport_ToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.exportReport_ToolStripMenuItem.Text = "Сохранить отчет";
             this.exportReport_ToolStripMenuItem.Click += new System.EventHandler(this.ExportReportToolStripMenuItem_Click);
+            // 
+            // settings_ToolStripMenuItem
+            // 
+            this.settings_ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.operatorsSettings_ToolStripMenuItem});
+            this.settings_ToolStripMenuItem.Name = "settings_ToolStripMenuItem";
+            this.settings_ToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.settings_ToolStripMenuItem.Text = "Настройки";
+            // 
+            // operatorsSettings_ToolStripMenuItem
+            // 
+            this.operatorsSettings_ToolStripMenuItem.Name = "operatorsSettings_ToolStripMenuItem";
+            this.operatorsSettings_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.operatorsSettings_ToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.operatorsSettings_ToolStripMenuItem.Text = "Настройка операторов";
+            this.operatorsSettings_ToolStripMenuItem.Click += new System.EventHandler(this.operatorsSettings_ToolStripMenuItem_Click);
             // 
             // backgroundWorker
             // 
@@ -156,21 +174,6 @@
             this.prograss_label.Size = new System.Drawing.Size(21, 13);
             this.prograss_label.TabIndex = 6;
             this.prograss_label.Text = "0%";
-            // 
-            // settings_ToolStripMenuItem
-            // 
-            this.settings_ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.operatorsSettings_ToolStripMenuItem});
-            this.settings_ToolStripMenuItem.Name = "settings_ToolStripMenuItem";
-            this.settings_ToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.settings_ToolStripMenuItem.Text = "Настройки";
-            // 
-            // operatorsSettings_ToolStripMenuItem
-            // 
-            this.operatorsSettings_ToolStripMenuItem.Name = "operatorsSettings_ToolStripMenuItem";
-            this.operatorsSettings_ToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.operatorsSettings_ToolStripMenuItem.Text = "Настройка операторов";
-            this.operatorsSettings_ToolStripMenuItem.Click += new System.EventHandler(this.operatorsSettings_ToolStripMenuItem_Click);
             // 
             // Code_parserForm
             // 
