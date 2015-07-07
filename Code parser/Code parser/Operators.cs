@@ -122,12 +122,12 @@ namespace Code_parser
             {
                 try
                 {
-                    using (StreamWriter writer = new StreamWriter(fileName, false))
+                    using (StreamWriter writer = new StreamWriter(fileName, false, Encoding.Unicode))
                     {
-                        writer.WriteLine("Оператор;Количество");
+                        writer.WriteLine("Оператор" + "\t" + "Количество");
                         foreach (var item in operators_list)
                         {
-                            writer.WriteLine(item + ";" + operators_dic[item]);
+                            writer.WriteLine(item + "\t" + operators_dic[item]);
                         }
                         writer.Close();
                     }
