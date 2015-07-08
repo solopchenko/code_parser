@@ -31,9 +31,10 @@ namespace Code_parser
             {
                 try
                 {
-                    using (StreamReader sr = new StreamReader(fileName))
+                    using (StreamReader reader = new StreamReader(fileName))
                     {
-                        raw_code = sr.ReadToEnd();
+                        raw_code = reader.ReadToEnd();
+                        reader.Close();
                     }
                 }
 

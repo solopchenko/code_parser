@@ -53,7 +53,7 @@ namespace Code_parser
 
                 SetDefaultOperators();
 
-                MessageBox.Show("Не удалось загрузить файл настроек.\nВозможно доступ к файлу запрещен. Либо файл отсутсвует.\nПрименен стандарнтный набор операторов. ", "Не удалось загрузить настройки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Не удалось загрузить файл настроек.\nВозможно доступ к файлу запрещен. Либо файл отсутсвует.\nПрименен стандарнтный набор операторов.", "Не удалось загрузить настройки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

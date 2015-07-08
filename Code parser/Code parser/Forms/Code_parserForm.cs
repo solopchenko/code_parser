@@ -15,6 +15,8 @@ namespace Code_parser
         
         public Main main;
 
+        public bool flag = false;
+
         public Code_parserForm()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace Code_parser
             progressBar.Value = 0;
         }
 
-        private void Open_ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void open_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Если нить свободна
             if (backgroundWorker.IsBusy != true)
@@ -75,12 +77,48 @@ namespace Code_parser
             }
         }
 
-        //Экспорт отчета
-        private void ExportReportToolStripMenuItem_Click(object sender, EventArgs e)
+        //Открытие папки
+        private void openFolder_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string fileName = main.SaveDialog("Выберите место для сохранения отчета", "CSV file *.csv | *.CSV", "Report");
 
-            main.operators.CreateReport(fileName);
+            fileContent_richTextBox.Clear();
+
+            List<string> files = main.OpenFolder("*.cs");
+
+            if ((files != null) && (files.Count > 0))
+            {
+                int fileCount = 0;
+                while (fileCount < files.Count)
+                {
+                    if (backgroundWorker.IsBusy != true)
+                    {
+                        setProgress(progressBar, prograss_label, 15);
+
+                        main.code.SetCodeFromFile(files[fileCount]);
+
+                        fileContent_richTextBox.Text += main.code.raw_code;
+
+                        Random rnd = new Random();
+
+                        if (main.code.raw_code.Length < 2000)
+                        {
+                            setProgress(progressBar, prograss_label, rnd.Next(95, 98));
+                        }
+                        else
+                        {
+                            setProgress(progressBar, prograss_label, rnd.Next(80, 98));
+                        }
+
+                        fileCount = fileCount + 1;    
+                        backgroundWorker.RunWorkerAsync();
+                        //backgroundWorker.WorkerSupportsCancellation ??
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("В выбранной папке отсутсвуют файлы с исходным кодом C#.", "Файлы не найлдены", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }  
         }
 
         //Тело нити
@@ -111,7 +149,7 @@ namespace Code_parser
                 stat_grid.Columns[1].HeaderText = "Количество";
             }
 
-
+            //Оповещение о завершении обработки очередного файла
         }
 
         //Установка визуализации обработки файлов
@@ -126,6 +164,14 @@ namespace Code_parser
         {
             OperatorsSettings OperatorsSettingsForm = new OperatorsSettings(main);
             OperatorsSettingsForm.Show();
+        }
+
+        //Экспорт отчета
+        private void exportReport_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string fileName = main.SaveDialog("Выберите место для сохранения отчета", "CSV file *.csv | *.CSV", "Report");
+
+            main.operators.CreateReport(fileName);
         }
     }
 }

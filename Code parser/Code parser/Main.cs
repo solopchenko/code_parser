@@ -22,13 +22,31 @@ namespace Code_parser
         //Выбор файла
         public string OpenDialog(string title, string filter)
         {
-            var fd = new OpenFileDialog();
+            OpenFileDialog fd = new OpenFileDialog();
             fd.Title = title;
             fd.Filter = filter;
 
-            fd.ShowDialog();
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                return fd.FileName;
+            }
 
-            return fd.FileName;
+            return String.Empty;
+        }
+
+        //Выбор папки
+        public List<string> OpenFolder(string filter)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                return Directory.GetFiles(fbd.SelectedPath, filter, SearchOption.AllDirectories).ToList();
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public void Reset()
