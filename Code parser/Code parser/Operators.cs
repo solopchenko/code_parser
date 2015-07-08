@@ -63,13 +63,11 @@ namespace Code_parser
             operators_list.Clear();
             operators_dic.Clear();
 
-            foreach (var item in op_list)
+            foreach (var item in op_list.Distinct())
             {
                 operators_list.Add(item);
                 operators_dic.Add(item, 0);
             }
-
-            //ЕСЛИ ОДИНАКОВЫЕ ЗНАЧЕНИЯ ВВЕСТИ В ДЭЙТАГРИД, ТО ВОЗНИКАЕТ ИСКЛЮЧЕНИЕ ОЮ УЖЕ СУЩЕСТВУЮЩЕМ ЭЛЕМЕНТЕ
 
             //Запись в файл
             try
