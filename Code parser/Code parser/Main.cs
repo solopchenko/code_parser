@@ -52,7 +52,7 @@ namespace Code_parser
         public void Reset()
         {
             operators.ResetOperatorsCount();
-            code.ResetCode();
+            code.ClearCode();
         }
 
         public string SaveDialog(string title, string filter, string fileName)
@@ -61,7 +61,6 @@ namespace Code_parser
             fd.Title = title; 
             fd.Filter = filter;
             fd.FileName = fileName + " " + DateTime.Now.ToString("dd-MM-yyyy hh-mm-ss");
-
 
             fd.ShowDialog();
 

@@ -16,6 +16,9 @@ namespace Code_parser
         //Исходный код, использованный в алгоритмах
         public string code { get; private set; }
 
+        //Путь к файлу с кодом
+        public string code_file_name { get; private set; }
+
         public Code()
         {
             raw_code = String.Empty;
@@ -25,10 +28,11 @@ namespace Code_parser
         //Чтение файла
         public void SetCodeFromFile(string fileName)
         {
-            string str = string.Empty;
+            ClearCode();
 
             if (fileName != string.Empty)
             {
+                code_file_name = fileName;
                 try
                 {
                     using (StreamReader reader = new StreamReader(fileName))
@@ -44,16 +48,18 @@ namespace Code_parser
                     
                     raw_code = String.Empty;
                     code = String.Empty;
+                    code_file_name = String.Empty;
 
                     return;
                 }
             }
         }
 
-        public void ResetCode()
+        public void ClearCode()
         {
             raw_code = String.Empty;
             code = String.Empty;
+            code_file_name = String.Empty;
         }
 
         //Удаление коментариев и строк
@@ -114,7 +120,7 @@ namespace Code_parser
         }
 
         //Подсчет операторов
-        public void CountOperators(Operators o)
+        public void CountOperatorsFromFile(Operators o)
         {
             RemoveCommentsAndStrings();
 
@@ -145,5 +151,22 @@ namespace Code_parser
                 }
             }
         }
+
+        public string ShowCode()
+        {
+            string str = String.Empty;
+
+            if((!String.IsNullOrEmpty(code_file_name) && (!String.IsNullOrEmpty(raw_code))))
+            {
+                str =
+                    "\n\n========================================================================\n" +
+                    code_file_name +
+                    "\n========================================================================\n\n" +
+                    raw_code;
+            }
+
+            return str;
+        }
+
     }
 }

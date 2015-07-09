@@ -34,15 +34,16 @@
             this.stat_groupBox = new System.Windows.Forms.GroupBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.file_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.open_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFile_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFolder_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportReport_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settings_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operatorsSettings_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.file_backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.progress_groupBox = new System.Windows.Forms.GroupBox();
             this.prograss_label = new System.Windows.Forms.Label();
-            this.exportReport_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.directory_backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.fileContent_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).BeginInit();
             this.stat_groupBox.SuspendLayout();
@@ -106,20 +107,20 @@
             // file_ToolStripMenuItem
             // 
             this.file_ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.open_ToolStripMenuItem,
+            this.openFile_ToolStripMenuItem,
             this.openFolder_ToolStripMenuItem,
             this.exportReport_ToolStripMenuItem});
             this.file_ToolStripMenuItem.Name = "file_ToolStripMenuItem";
             this.file_ToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.file_ToolStripMenuItem.Text = "Файл";
             // 
-            // open_ToolStripMenuItem
+            // openFile_ToolStripMenuItem
             // 
-            this.open_ToolStripMenuItem.Name = "open_ToolStripMenuItem";
-            this.open_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.open_ToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.open_ToolStripMenuItem.Text = "Открыть файл";
-            this.open_ToolStripMenuItem.Click += new System.EventHandler(this.open_ToolStripMenuItem_Click);
+            this.openFile_ToolStripMenuItem.Name = "openFile_ToolStripMenuItem";
+            this.openFile_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openFile_ToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.openFile_ToolStripMenuItem.Text = "Открыть файл";
+            this.openFile_ToolStripMenuItem.Click += new System.EventHandler(this.openFile_ToolStripMenuItem_Click);
             // 
             // openFolder_ToolStripMenuItem
             // 
@@ -128,6 +129,14 @@
             this.openFolder_ToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.openFolder_ToolStripMenuItem.Text = "Открыть папку";
             this.openFolder_ToolStripMenuItem.Click += new System.EventHandler(this.openFolder_ToolStripMenuItem_Click);
+            // 
+            // exportReport_ToolStripMenuItem
+            // 
+            this.exportReport_ToolStripMenuItem.Name = "exportReport_ToolStripMenuItem";
+            this.exportReport_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.exportReport_ToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.exportReport_ToolStripMenuItem.Text = "Сохранить отчет";
+            this.exportReport_ToolStripMenuItem.Click += new System.EventHandler(this.exportReport_ToolStripMenuItem_Click);
             // 
             // settings_ToolStripMenuItem
             // 
@@ -145,10 +154,11 @@
             this.operatorsSettings_ToolStripMenuItem.Text = "Настройка операторов";
             this.operatorsSettings_ToolStripMenuItem.Click += new System.EventHandler(this.operatorsSettings_ToolStripMenuItem_Click);
             // 
-            // backgroundWorker
+            // file_backgroundWorker
             // 
-            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
-            this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
+            this.file_backgroundWorker.WorkerReportsProgress = true;
+            this.file_backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.file_backgroundWorker_DoWork);
+            this.file_backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.file_backgroundWorker_RunWorkerCompleted);
             // 
             // progressBar
             // 
@@ -177,13 +187,12 @@
             this.prograss_label.TabIndex = 6;
             this.prograss_label.Text = "0%";
             // 
-            // exportReport_ToolStripMenuItem
+            // directory_backgroundWorker
             // 
-            this.exportReport_ToolStripMenuItem.Name = "exportReport_ToolStripMenuItem";
-            this.exportReport_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.exportReport_ToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.exportReport_ToolStripMenuItem.Text = "Сохранить отчет";
-            this.exportReport_ToolStripMenuItem.Click += new System.EventHandler(this.exportReport_ToolStripMenuItem_Click);
+            this.directory_backgroundWorker.WorkerReportsProgress = true;
+            this.directory_backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.directory_backgroundWorker_DoWork);
+            this.directory_backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.directory_backgroundWorker_ProgressChanged);
+            this.directory_backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.directory_backgroundWorker_RunWorkerCompleted);
             // 
             // Code_parserForm
             // 
@@ -219,15 +228,16 @@
         private System.Windows.Forms.GroupBox stat_groupBox;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem file_ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem open_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openFile_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openFolder_ToolStripMenuItem;
-        private System.ComponentModel.BackgroundWorker backgroundWorker;
+        private System.ComponentModel.BackgroundWorker file_backgroundWorker;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.GroupBox progress_groupBox;
         private System.Windows.Forms.Label prograss_label;
         private System.Windows.Forms.ToolStripMenuItem settings_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem operatorsSettings_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportReport_ToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker directory_backgroundWorker;
     }
 }
 
