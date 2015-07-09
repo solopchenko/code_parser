@@ -40,12 +40,12 @@
             this.operators_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.operators_grid.Location = new System.Drawing.Point(12, 12);
             this.operators_grid.Name = "operators_grid";
-            this.operators_grid.Size = new System.Drawing.Size(483, 315);
+            this.operators_grid.Size = new System.Drawing.Size(409, 315);
             this.operators_grid.TabIndex = 0;
             // 
             // saveOperatorsSettings_btn
             // 
-            this.saveOperatorsSettings_btn.Location = new System.Drawing.Point(420, 333);
+            this.saveOperatorsSettings_btn.Location = new System.Drawing.Point(346, 333);
             this.saveOperatorsSettings_btn.Name = "saveOperatorsSettings_btn";
             this.saveOperatorsSettings_btn.Size = new System.Drawing.Size(75, 23);
             this.saveOperatorsSettings_btn.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // standartOperators_btn
             // 
-            this.standartOperators_btn.Location = new System.Drawing.Point(242, 333);
+            this.standartOperators_btn.Location = new System.Drawing.Point(183, 333);
             this.standartOperators_btn.Name = "standartOperators_btn";
             this.standartOperators_btn.Size = new System.Drawing.Size(157, 23);
             this.standartOperators_btn.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 365);
+            this.ClientSize = new System.Drawing.Size(433, 365);
             this.Controls.Add(this.standartOperators_btn);
             this.Controls.Add(this.saveOperatorsSettings_btn);
             this.Controls.Add(this.operators_grid);

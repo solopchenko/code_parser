@@ -54,6 +54,8 @@ namespace Code_parser
             main.operators.SetDefaultOperators();
 
             RefreshGrid(operators_grid, main.operators.operators_list);
+
+            this.Close();
         }
 
         private void RefreshGrid(DataGridView dgv, List<string> source)

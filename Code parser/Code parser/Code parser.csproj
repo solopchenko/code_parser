@@ -51,6 +51,7 @@
     <Compile Include="Forms\Code_parserForm.Designer.cs">
       <DependentUpon>Code_parserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Laboriousness.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Operators.cs" />
     <Compile Include="Forms\OperatorsSettings.cs">

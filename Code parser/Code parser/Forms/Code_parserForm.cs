@@ -15,11 +15,15 @@ namespace Code_parser
         
         public Main main;
 
+        public Laboriousness lab;
+
         public Code_parserForm()
         {
             InitializeComponent();
 
             main = new Main();
+
+            lab = new Laboriousness();
 
             //Настройки таблицы статистики
             stat_grid.GridColor = Color.Black;
@@ -28,12 +32,20 @@ namespace Code_parser
             stat_grid.BorderStyle = BorderStyle.None;
             stat_grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+            //Кнопка расчета трудоемкости
+            countLaboriousness_button.Enabled = false;
+
             progressBar.Value = 0;
         }
 
         //Открытие файла
         private void openFile_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Кнопка расчета трудоемкости
+            countLaboriousness_button.Enabled = false;
+            //Очистка параметров расчета трудоемкости
+            ClearLaboriousnessParams();
+
             //Если нить свободна
             if (!directory_backgroundWorker.IsBusy && !file_backgroundWorker.IsBusy)
             {
@@ -102,6 +114,9 @@ namespace Code_parser
 
                 stat_grid.Columns[0].HeaderText = "Оператор";
                 stat_grid.Columns[1].HeaderText = "Количество";
+
+                //Кнопка расчета трудоемкости
+                countLaboriousness_button.Enabled = true;
             }
         }
 
@@ -110,6 +125,11 @@ namespace Code_parser
         //Открытие папки
         private void openFolder_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Кнопка расчета трудоемкости
+            countLaboriousness_button.Enabled = false;
+            //Очистка параметров расчета трудоемкости
+            ClearLaboriousnessParams();
+
             if (!directory_backgroundWorker.IsBusy && !file_backgroundWorker.IsBusy)
             {
                 //Сброс статистики
@@ -193,6 +213,9 @@ namespace Code_parser
 
                 stat_grid.Columns[0].HeaderText = "Оператор";
                 stat_grid.Columns[1].HeaderText = "Количество";
+
+                //Кнопка расчета трудоемкости
+                countLaboriousness_button.Enabled = true;
             }
 
         }
@@ -225,6 +248,71 @@ namespace Code_parser
             string fileName = main.SaveDialog("Выберите место для сохранения отчета", "CSV file *.csv | *.CSV", "Report");
 
             main.operators.CreateReport(fileName);
+        }
+
+        //Расчет трудоемкости
+        private void countLaboriousness_button_Click(object sender, EventArgs e)
+        {
+            lab.N = main.operators.CountAllOperators();
+            N_textBox.Text = lab.N.ToString();
+
+            lab.Kn = Convert.ToDouble(Kn_textBox.Text);
+            lab.Pp = Convert.ToDouble(Pp_textBox.Text);
+
+            lab.K2 = Convert.ToDouble(K2_textBox.Text);
+            lab.K3 = Convert.ToDouble(K3_textBox.Text);
+
+            laboriousness_textBox.Text = lab.CounLaboriousness().ToString();
+        }
+
+        //Сброс трудоемкости
+        private void ClearLaboriousnessParams()
+        {
+            N_textBox.Clear();
+            laboriousness_textBox.Clear();
+        }
+
+        //Выбор значения Knp для расчета трудоемкости
+        private void Knp_radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioBtn = (RadioButton)sender;
+
+            string currentButton = radioBtn.Name;
+            if (radioBtn.Checked == true)
+            {
+                switch (currentButton)
+                {
+                    case "Knp01_radioButton":
+                        lab.Knp = 0.1;
+                        break;
+                    case "Knp06_radioButton":
+                        lab.Knp = 0.6;
+                        break;
+                    case "Knp1_radioButton":
+                        lab.Knp = 1.0;
+                        break;
+                }
+            }
+        }
+        
+        //Выбор значения K1 для расчета трудоемкости
+        private void K1_radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioBtn = (RadioButton)sender;
+
+            string currentButton = radioBtn.Name;
+            if (radioBtn.Checked == true)
+            {
+                switch (currentButton)
+                {
+                    case "K1_1_radioButton":
+                        lab.K1 = 1.0;
+                        break;
+                    case "K1_125_radioButton":
+                        lab.K1 = 1.25;
+                        break;
+                }
+            }
         }
     }
 }

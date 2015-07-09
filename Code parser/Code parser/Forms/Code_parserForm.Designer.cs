@@ -44,11 +44,41 @@
             this.progress_groupBox = new System.Windows.Forms.GroupBox();
             this.prograss_label = new System.Windows.Forms.Label();
             this.directory_backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Laboriousness_groupBox = new System.Windows.Forms.GroupBox();
+            this.laboriousness_textBox = new System.Windows.Forms.TextBox();
+            this.countLaboriousness_button = new System.Windows.Forms.Button();
+            this.K3_groupBox = new System.Windows.Forms.GroupBox();
+            this.K3_textBox = new System.Windows.Forms.TextBox();
+            this.Kn_groupBox = new System.Windows.Forms.GroupBox();
+            this.Kn_textBox = new System.Windows.Forms.TextBox();
+            this.K2_groupBox = new System.Windows.Forms.GroupBox();
+            this.K2_textBox = new System.Windows.Forms.TextBox();
+            this.K1_groupBox = new System.Windows.Forms.GroupBox();
+            this.K1_1_radioButton = new System.Windows.Forms.RadioButton();
+            this.K1_125_radioButton = new System.Windows.Forms.RadioButton();
+            this.Knp_groupBox = new System.Windows.Forms.GroupBox();
+            this.Knp01_radioButton = new System.Windows.Forms.RadioButton();
+            this.Knp06_radioButton = new System.Windows.Forms.RadioButton();
+            this.Knp1_radioButton = new System.Windows.Forms.RadioButton();
+            this.Pp_groupBox = new System.Windows.Forms.GroupBox();
+            this.Pp_textBox = new System.Windows.Forms.TextBox();
+            this.N_groupBox = new System.Windows.Forms.GroupBox();
+            this.N_textBox = new System.Windows.Forms.TextBox();
             this.fileContent_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).BeginInit();
             this.stat_groupBox.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.progress_groupBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.Laboriousness_groupBox.SuspendLayout();
+            this.K3_groupBox.SuspendLayout();
+            this.Kn_groupBox.SuspendLayout();
+            this.K2_groupBox.SuspendLayout();
+            this.K1_groupBox.SuspendLayout();
+            this.Knp_groupBox.SuspendLayout();
+            this.Pp_groupBox.SuspendLayout();
+            this.N_groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // fileContent_richTextBox
@@ -59,19 +89,19 @@
             this.fileContent_richTextBox.Location = new System.Drawing.Point(9, 29);
             this.fileContent_richTextBox.Name = "fileContent_richTextBox";
             this.fileContent_richTextBox.ReadOnly = true;
-            this.fileContent_richTextBox.Size = new System.Drawing.Size(468, 174);
+            this.fileContent_richTextBox.Size = new System.Drawing.Size(586, 174);
             this.fileContent_richTextBox.TabIndex = 1;
             this.fileContent_richTextBox.Text = "";
             // 
             // fileContent_groupBox
             // 
             this.fileContent_groupBox.Controls.Add(this.fileContent_richTextBox);
-            this.fileContent_groupBox.Location = new System.Drawing.Point(12, 37);
+            this.fileContent_groupBox.Location = new System.Drawing.Point(13, 27);
             this.fileContent_groupBox.Name = "fileContent_groupBox";
-            this.fileContent_groupBox.Size = new System.Drawing.Size(487, 215);
+            this.fileContent_groupBox.Size = new System.Drawing.Size(607, 215);
             this.fileContent_groupBox.TabIndex = 2;
             this.fileContent_groupBox.TabStop = false;
-            this.fileContent_groupBox.Text = "Содержимое файла";
+            this.fileContent_groupBox.Text = "Область просмотра";
             // 
             // stat_grid
             // 
@@ -80,15 +110,15 @@
             this.stat_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stat_grid.Location = new System.Drawing.Point(9, 19);
             this.stat_grid.Name = "stat_grid";
-            this.stat_grid.Size = new System.Drawing.Size(468, 225);
+            this.stat_grid.Size = new System.Drawing.Size(307, 290);
             this.stat_grid.TabIndex = 3;
             // 
             // stat_groupBox
             // 
             this.stat_groupBox.Controls.Add(this.stat_grid);
-            this.stat_groupBox.Location = new System.Drawing.Point(12, 368);
+            this.stat_groupBox.Location = new System.Drawing.Point(11, 82);
             this.stat_groupBox.Name = "stat_groupBox";
-            this.stat_groupBox.Size = new System.Drawing.Size(487, 256);
+            this.stat_groupBox.Size = new System.Drawing.Size(331, 318);
             this.stat_groupBox.TabIndex = 3;
             this.stat_groupBox.TabStop = false;
             this.stat_groupBox.Text = "Статистика";
@@ -100,7 +130,7 @@
             this.settings_ToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(514, 24);
+            this.menuStrip.Size = new System.Drawing.Size(637, 24);
             this.menuStrip.TabIndex = 4;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -162,26 +192,26 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(9, 31);
+            this.progressBar.Location = new System.Drawing.Point(9, 25);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(431, 23);
+            this.progressBar.Size = new System.Drawing.Size(558, 19);
             this.progressBar.TabIndex = 5;
             // 
             // progress_groupBox
             // 
             this.progress_groupBox.Controls.Add(this.prograss_label);
             this.progress_groupBox.Controls.Add(this.progressBar);
-            this.progress_groupBox.Location = new System.Drawing.Point(12, 273);
+            this.progress_groupBox.Location = new System.Drawing.Point(12, 248);
             this.progress_groupBox.Name = "progress_groupBox";
-            this.progress_groupBox.Size = new System.Drawing.Size(487, 79);
+            this.progress_groupBox.Size = new System.Drawing.Size(607, 63);
             this.progress_groupBox.TabIndex = 6;
             this.progress_groupBox.TabStop = false;
-            this.progress_groupBox.Text = "Анализ файла...";
+            this.progress_groupBox.Text = "Степень готовности";
             // 
             // prograss_label
             // 
             this.prograss_label.AutoSize = true;
-            this.prograss_label.Location = new System.Drawing.Point(446, 37);
+            this.prograss_label.Location = new System.Drawing.Point(574, 29);
             this.prograss_label.Name = "prograss_label";
             this.prograss_label.Size = new System.Drawing.Size(21, 13);
             this.prograss_label.TabIndex = 6;
@@ -194,13 +224,235 @@
             this.directory_backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.directory_backgroundWorker_ProgressChanged);
             this.directory_backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.directory_backgroundWorker_RunWorkerCompleted);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Laboriousness_groupBox);
+            this.groupBox1.Controls.Add(this.K3_groupBox);
+            this.groupBox1.Controls.Add(this.Kn_groupBox);
+            this.groupBox1.Controls.Add(this.K2_groupBox);
+            this.groupBox1.Controls.Add(this.stat_groupBox);
+            this.groupBox1.Controls.Add(this.K1_groupBox);
+            this.groupBox1.Controls.Add(this.Knp_groupBox);
+            this.groupBox1.Controls.Add(this.Pp_groupBox);
+            this.groupBox1.Controls.Add(this.N_groupBox);
+            this.groupBox1.Location = new System.Drawing.Point(13, 317);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(607, 485);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Расчет трудоемкости программного обеспечения";
+            // 
+            // Laboriousness_groupBox
+            // 
+            this.Laboriousness_groupBox.Controls.Add(this.laboriousness_textBox);
+            this.Laboriousness_groupBox.Controls.Add(this.countLaboriousness_button);
+            this.Laboriousness_groupBox.Location = new System.Drawing.Point(9, 406);
+            this.Laboriousness_groupBox.Name = "Laboriousness_groupBox";
+            this.Laboriousness_groupBox.Size = new System.Drawing.Size(331, 67);
+            this.Laboriousness_groupBox.TabIndex = 28;
+            this.Laboriousness_groupBox.TabStop = false;
+            this.Laboriousness_groupBox.Text = "Трудоёмкость программного обеспечения";
+            // 
+            // laboriousness_textBox
+            // 
+            this.laboriousness_textBox.Location = new System.Drawing.Point(11, 32);
+            this.laboriousness_textBox.Name = "laboriousness_textBox";
+            this.laboriousness_textBox.ReadOnly = true;
+            this.laboriousness_textBox.Size = new System.Drawing.Size(215, 20);
+            this.laboriousness_textBox.TabIndex = 16;
+            // 
+            // countLaboriousness_button
+            // 
+            this.countLaboriousness_button.Location = new System.Drawing.Point(243, 31);
+            this.countLaboriousness_button.Name = "countLaboriousness_button";
+            this.countLaboriousness_button.Size = new System.Drawing.Size(75, 23);
+            this.countLaboriousness_button.TabIndex = 14;
+            this.countLaboriousness_button.Text = "Расчитать";
+            this.countLaboriousness_button.UseVisualStyleBackColor = true;
+            this.countLaboriousness_button.Click += new System.EventHandler(this.countLaboriousness_button_Click);
+            // 
+            // K3_groupBox
+            // 
+            this.K3_groupBox.Controls.Add(this.K3_textBox);
+            this.K3_groupBox.Location = new System.Drawing.Point(349, 406);
+            this.K3_groupBox.Name = "K3_groupBox";
+            this.K3_groupBox.Size = new System.Drawing.Size(247, 67);
+            this.K3_groupBox.TabIndex = 27;
+            this.K3_groupBox.TabStop = false;
+            this.K3_groupBox.Text = "Коэффициент, учитывающий структуру используемых вычислительных средств";
+            // 
+            // K3_textBox
+            // 
+            this.K3_textBox.Location = new System.Drawing.Point(11, 34);
+            this.K3_textBox.Name = "K3_textBox";
+            this.K3_textBox.Size = new System.Drawing.Size(230, 20);
+            this.K3_textBox.TabIndex = 11;
+            this.K3_textBox.Text = "1,0";
+            // 
+            // Kn_groupBox
+            // 
+            this.Kn_groupBox.Controls.Add(this.Kn_textBox);
+            this.Kn_groupBox.Location = new System.Drawing.Point(348, 93);
+            this.Kn_groupBox.Name = "Kn_groupBox";
+            this.Kn_groupBox.Size = new System.Drawing.Size(254, 89);
+            this.Kn_groupBox.TabIndex = 27;
+            this.Kn_groupBox.TabStop = false;
+            this.Kn_groupBox.Text = "Коэффициент, пересчета производительности проектировщиков алгоритмов к производит" +
+    "ельности разработчиков программ";
+            // 
+            // Kn_textBox
+            // 
+            this.Kn_textBox.Location = new System.Drawing.Point(11, 62);
+            this.Kn_textBox.Name = "Kn_textBox";
+            this.Kn_textBox.Size = new System.Drawing.Size(230, 20);
+            this.Kn_textBox.TabIndex = 7;
+            this.Kn_textBox.Text = "0,58";
+            // 
+            // K2_groupBox
+            // 
+            this.K2_groupBox.Controls.Add(this.K2_textBox);
+            this.K2_groupBox.Location = new System.Drawing.Point(349, 321);
+            this.K2_groupBox.Name = "K2_groupBox";
+            this.K2_groupBox.Size = new System.Drawing.Size(259, 79);
+            this.K2_groupBox.TabIndex = 25;
+            this.K2_groupBox.TabStop = false;
+            this.K2_groupBox.Text = "Поправочный коэффициент, учитывающий затраты на отладку в зависимости от размеров" +
+    " программы";
+            // 
+            // K2_textBox
+            // 
+            this.K2_textBox.Location = new System.Drawing.Point(11, 50);
+            this.K2_textBox.Name = "K2_textBox";
+            this.K2_textBox.ReadOnly = true;
+            this.K2_textBox.Size = new System.Drawing.Size(230, 20);
+            this.K2_textBox.TabIndex = 10;
+            this.K2_textBox.Text = "1,09";
+            // 
+            // K1_groupBox
+            // 
+            this.K1_groupBox.Controls.Add(this.K1_1_radioButton);
+            this.K1_groupBox.Controls.Add(this.K1_125_radioButton);
+            this.K1_groupBox.Location = new System.Drawing.Point(349, 255);
+            this.K1_groupBox.Name = "K1_groupBox";
+            this.K1_groupBox.Size = new System.Drawing.Size(259, 60);
+            this.K1_groupBox.TabIndex = 24;
+            this.K1_groupBox.TabStop = false;
+            this.K1_groupBox.Text = "Коэффициент, учитывающий работу в реальном масштабе времени";
+            // 
+            // K1_1_radioButton
+            // 
+            this.K1_1_radioButton.AutoSize = true;
+            this.K1_1_radioButton.Checked = true;
+            this.K1_1_radioButton.Location = new System.Drawing.Point(57, 33);
+            this.K1_1_radioButton.Name = "K1_1_radioButton";
+            this.K1_1_radioButton.Size = new System.Drawing.Size(31, 17);
+            this.K1_1_radioButton.TabIndex = 20;
+            this.K1_1_radioButton.TabStop = true;
+            this.K1_1_radioButton.Text = "1";
+            this.K1_1_radioButton.UseVisualStyleBackColor = true;
+            this.K1_1_radioButton.CheckedChanged += new System.EventHandler(this.K1_radioButton_CheckedChanged);
+            // 
+            // K1_125_radioButton
+            // 
+            this.K1_125_radioButton.AutoSize = true;
+            this.K1_125_radioButton.Location = new System.Drawing.Point(137, 33);
+            this.K1_125_radioButton.Name = "K1_125_radioButton";
+            this.K1_125_radioButton.Size = new System.Drawing.Size(46, 17);
+            this.K1_125_radioButton.TabIndex = 21;
+            this.K1_125_radioButton.Text = "1,25";
+            this.K1_125_radioButton.UseVisualStyleBackColor = true;
+            this.K1_125_radioButton.CheckedChanged += new System.EventHandler(this.K1_radioButton_CheckedChanged);
+            // 
+            // Knp_groupBox
+            // 
+            this.Knp_groupBox.Controls.Add(this.Knp01_radioButton);
+            this.Knp_groupBox.Controls.Add(this.Knp06_radioButton);
+            this.Knp_groupBox.Controls.Add(this.Knp1_radioButton);
+            this.Knp_groupBox.Location = new System.Drawing.Point(349, 188);
+            this.Knp_groupBox.Name = "Knp_groupBox";
+            this.Knp_groupBox.Size = new System.Drawing.Size(259, 61);
+            this.Knp_groupBox.TabIndex = 22;
+            this.Knp_groupBox.TabStop = false;
+            this.Knp_groupBox.Text = "Коэффициент приемственности программного компонента";
+            // 
+            // Knp01_radioButton
+            // 
+            this.Knp01_radioButton.AutoSize = true;
+            this.Knp01_radioButton.Checked = true;
+            this.Knp01_radioButton.Location = new System.Drawing.Point(11, 38);
+            this.Knp01_radioButton.Name = "Knp01_radioButton";
+            this.Knp01_radioButton.Size = new System.Drawing.Size(40, 17);
+            this.Knp01_radioButton.TabIndex = 17;
+            this.Knp01_radioButton.TabStop = true;
+            this.Knp01_radioButton.Text = "0,1";
+            this.Knp01_radioButton.UseVisualStyleBackColor = true;
+            this.Knp01_radioButton.CheckedChanged += new System.EventHandler(this.Knp_radioButton_CheckedChanged);
+            // 
+            // Knp06_radioButton
+            // 
+            this.Knp06_radioButton.AutoSize = true;
+            this.Knp06_radioButton.Location = new System.Drawing.Point(106, 38);
+            this.Knp06_radioButton.Name = "Knp06_radioButton";
+            this.Knp06_radioButton.Size = new System.Drawing.Size(40, 17);
+            this.Knp06_radioButton.TabIndex = 18;
+            this.Knp06_radioButton.Text = "0,6";
+            this.Knp06_radioButton.UseVisualStyleBackColor = true;
+            this.Knp06_radioButton.CheckedChanged += new System.EventHandler(this.Knp_radioButton_CheckedChanged);
+            // 
+            // Knp1_radioButton
+            // 
+            this.Knp1_radioButton.AutoSize = true;
+            this.Knp1_radioButton.Location = new System.Drawing.Point(200, 38);
+            this.Knp1_radioButton.Name = "Knp1_radioButton";
+            this.Knp1_radioButton.Size = new System.Drawing.Size(31, 17);
+            this.Knp1_radioButton.TabIndex = 19;
+            this.Knp1_radioButton.Text = "1";
+            this.Knp1_radioButton.UseVisualStyleBackColor = true;
+            this.Knp1_radioButton.CheckedChanged += new System.EventHandler(this.Knp_radioButton_CheckedChanged);
+            // 
+            // Pp_groupBox
+            // 
+            this.Pp_groupBox.Controls.Add(this.Pp_textBox);
+            this.Pp_groupBox.Location = new System.Drawing.Point(348, 30);
+            this.Pp_groupBox.Name = "Pp_groupBox";
+            this.Pp_groupBox.Size = new System.Drawing.Size(254, 57);
+            this.Pp_groupBox.TabIndex = 26;
+            this.Pp_groupBox.TabStop = false;
+            this.Pp_groupBox.Text = "Средняя производительность разработчиков";
+            // 
+            // Pp_textBox
+            // 
+            this.Pp_textBox.Location = new System.Drawing.Point(11, 31);
+            this.Pp_textBox.Name = "Pp_textBox";
+            this.Pp_textBox.Size = new System.Drawing.Size(230, 20);
+            this.Pp_textBox.TabIndex = 6;
+            this.Pp_textBox.Text = "2,88";
+            // 
+            // N_groupBox
+            // 
+            this.N_groupBox.Controls.Add(this.N_textBox);
+            this.N_groupBox.Location = new System.Drawing.Point(11, 30);
+            this.N_groupBox.Name = "N_groupBox";
+            this.N_groupBox.Size = new System.Drawing.Size(331, 46);
+            this.N_groupBox.TabIndex = 23;
+            this.N_groupBox.TabStop = false;
+            this.N_groupBox.Text = "Общее количество операторов";
+            // 
+            // N_textBox
+            // 
+            this.N_textBox.Location = new System.Drawing.Point(9, 19);
+            this.N_textBox.Name = "N_textBox";
+            this.N_textBox.ReadOnly = true;
+            this.N_textBox.Size = new System.Drawing.Size(307, 20);
+            this.N_textBox.TabIndex = 13;
+            // 
             // Code_parserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 635);
+            this.ClientSize = new System.Drawing.Size(637, 815);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.progress_groupBox);
-            this.Controls.Add(this.stat_groupBox);
             this.Controls.Add(this.fileContent_groupBox);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -215,6 +467,23 @@
             this.menuStrip.PerformLayout();
             this.progress_groupBox.ResumeLayout(false);
             this.progress_groupBox.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.Laboriousness_groupBox.ResumeLayout(false);
+            this.Laboriousness_groupBox.PerformLayout();
+            this.K3_groupBox.ResumeLayout(false);
+            this.K3_groupBox.PerformLayout();
+            this.Kn_groupBox.ResumeLayout(false);
+            this.Kn_groupBox.PerformLayout();
+            this.K2_groupBox.ResumeLayout(false);
+            this.K2_groupBox.PerformLayout();
+            this.K1_groupBox.ResumeLayout(false);
+            this.K1_groupBox.PerformLayout();
+            this.Knp_groupBox.ResumeLayout(false);
+            this.Knp_groupBox.PerformLayout();
+            this.Pp_groupBox.ResumeLayout(false);
+            this.Pp_groupBox.PerformLayout();
+            this.N_groupBox.ResumeLayout(false);
+            this.N_groupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,6 +507,27 @@
         private System.Windows.Forms.ToolStripMenuItem operatorsSettings_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportReport_ToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker directory_backgroundWorker;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox N_textBox;
+        private System.Windows.Forms.TextBox K3_textBox;
+        private System.Windows.Forms.TextBox K2_textBox;
+        private System.Windows.Forms.TextBox Kn_textBox;
+        private System.Windows.Forms.TextBox Pp_textBox;
+        private System.Windows.Forms.Button countLaboriousness_button;
+        private System.Windows.Forms.TextBox laboriousness_textBox;
+        private System.Windows.Forms.RadioButton K1_125_radioButton;
+        private System.Windows.Forms.RadioButton K1_1_radioButton;
+        private System.Windows.Forms.RadioButton Knp1_radioButton;
+        private System.Windows.Forms.RadioButton Knp06_radioButton;
+        private System.Windows.Forms.RadioButton Knp01_radioButton;
+        private System.Windows.Forms.GroupBox Knp_groupBox;
+        private System.Windows.Forms.GroupBox N_groupBox;
+        private System.Windows.Forms.GroupBox K1_groupBox;
+        private System.Windows.Forms.GroupBox K2_groupBox;
+        private System.Windows.Forms.GroupBox Pp_groupBox;
+        private System.Windows.Forms.GroupBox K3_groupBox;
+        private System.Windows.Forms.GroupBox Kn_groupBox;
+        private System.Windows.Forms.GroupBox Laboriousness_groupBox;
     }
 }
 

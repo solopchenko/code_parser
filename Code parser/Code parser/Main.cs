@@ -19,6 +19,8 @@ namespace Code_parser
             operators = new Operators();
         }
 
+
+
         //Выбор файла
         public string OpenDialog(string title, string filter)
         {
@@ -66,5 +68,6 @@ namespace Code_parser
 
             return fd.FileName;
         }
+
     }
 }

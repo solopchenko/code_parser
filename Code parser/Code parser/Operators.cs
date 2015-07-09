@@ -113,6 +113,18 @@ namespace Code_parser
             }
         }
 
+        //Подсчет общего количества операторов
+        public int CountAllOperators()
+        {
+            int N = 0;
+            foreach (var item in operators_dic.Keys)
+            {
+                N = N + operators_dic[item];
+            }
+
+            return N;
+        }
+
         //Создание отчета
         public void CreateReport(string fileName)
         {
