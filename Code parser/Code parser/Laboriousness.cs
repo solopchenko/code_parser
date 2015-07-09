@@ -34,5 +34,22 @@ namespace Code_parser
 
             return result;
         }
+
+        public void BinarySearchForK2(int N)
+        {
+            int[] masN = { 100, 200, 300, 500, 700, 900, 1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 60000, 80000, 100000 };
+
+            int index = masN.Count() / 2;
+            int center = masN[index];
+
+            if (N > index)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
 }
