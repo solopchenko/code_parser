@@ -20,7 +20,7 @@ namespace Code_parser
         {
             operators_list = new List<string>();
             operators_dic = new Dictionary<string, int>();
-            config_path = "config//operators.conf";
+            config_path = Application.StartupPath + "//config//operators.conf";
 
             //По умолчанию нужно читать из файла, если это невозможно, то устанавливать стандартные настройки
             try

@@ -15,16 +15,18 @@ namespace Code_parser
         public double K1;
         public double K2;
         public double K3;
+        public double Result;
 
         public Laboriousness()
         {
-            N = -1;
-            Pp = -1;
-            Kn = -1;
-            Knp = -1;
-            K1 = -1;
-            K2 = -1;
-            K3 = -1;
+            N = 0;
+            Pp = 0.5;
+            Kn = 0.5;
+            Knp = 0.5;
+            K1 = 0.5;
+            K2 = 0.5;
+            K3 = 0.5;
+            Result = 0;
         }
 
         public double CounLaboriousness()
@@ -37,19 +39,26 @@ namespace Code_parser
 
         public void BinarySearchForK2(int N)
         {
-            int[] masN = { 100, 200, 300, 500, 700, 900, 1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 60000, 80000, 100000 };
-
-            int index = masN.Count() / 2;
-            int center = masN[index];
-
-            if (N > index)
-            {
-
-            }
-            else
-            {
-
-            }
+            Dictionary<int, double> K2_dic = new Dictionary<int, double>();
+            K2_dic.Add(100, 1.0);
+            K2_dic.Add(200, 1.03);
+            K2_dic.Add(300, 1.06);
+            K2_dic.Add(500, 1.09);
+            K2_dic.Add(700, 1.14);
+            K2_dic.Add(900, 1.20);
+            K2_dic.Add(1000, 1.32);
+            K2_dic.Add(2000, 1.49);
+            K2_dic.Add(3000, 1.55);
+            K2_dic.Add(4000, 1.65);
+            K2_dic.Add(5000, 1.77);
+            K2_dic.Add(10000, 1.90);
+            K2_dic.Add(20000, 2.03);
+            K2_dic.Add(30000, 2.16);
+            K2_dic.Add(40000, 2.35);
+            K2_dic.Add(50000, 2.90);
+            K2_dic.Add(60000, 3.0);
+            K2_dic.Add(80000, 3.0);
+            K2_dic.Add(100000, 3.0);
         }
     }
 }

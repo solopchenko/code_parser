@@ -35,6 +35,22 @@ namespace Code_parser
             //Кнопка расчета трудоемкости
             countLaboriousness_button.Enabled = false;
 
+            //Knp trackBar
+
+
+            //Экспорт
+            exportWord_ToolStripMenuItem.Enabled = false;
+            exportReport_ToolStripMenuItem.Enabled = false;
+
+            //Заполнение трудоемкости
+            N_textBox.Text = lab.N.ToString();
+            Knp_textBox.Text = lab.Knp.ToString();
+            Pp_textBox.Text = lab.Pp.ToString();
+            Knp_trackBar.Value = (int)(lab.Knp * 10); 
+            Kn_textBox.Text = lab.Kn.ToString();
+            K2_textBox.Text = lab.K2.ToString();
+            K3_textBox.Text = lab.K3.ToString();
+
             progressBar.Value = 0;
         }
 
@@ -45,6 +61,10 @@ namespace Code_parser
             countLaboriousness_button.Enabled = false;
             //Очистка параметров расчета трудоемкости
             ClearLaboriousnessParams();
+            //Кнопка расчета трудоемкости
+            countLaboriousness_button.Enabled = false;
+            //Экспорт
+            exportReport_ToolStripMenuItem.Enabled = false;
 
             //Если нить свободна
             if (!directory_backgroundWorker.IsBusy && !file_backgroundWorker.IsBusy)
@@ -115,8 +135,15 @@ namespace Code_parser
                 stat_grid.Columns[0].HeaderText = "Оператор";
                 stat_grid.Columns[1].HeaderText = "Количество";
 
+                //Общее количество операторов
+                lab.N = main.operators.CountAllOperators();
+                N_textBox.Text = lab.N.ToString();
+
                 //Кнопка расчета трудоемкости
                 countLaboriousness_button.Enabled = true;
+
+                //Экспорт
+                exportReport_ToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -129,6 +156,10 @@ namespace Code_parser
             countLaboriousness_button.Enabled = false;
             //Очистка параметров расчета трудоемкости
             ClearLaboriousnessParams();
+            //Кнопка расчета трудоемкости
+            countLaboriousness_button.Enabled = false;
+            //Экспорт
+            exportReport_ToolStripMenuItem.Enabled = false;
 
             if (!directory_backgroundWorker.IsBusy && !file_backgroundWorker.IsBusy)
             {
@@ -138,6 +169,8 @@ namespace Code_parser
                 fileContent_richTextBox.Clear();
 
                 List<string> files = main.OpenFolder("*.cs");
+
+                listOfFiles_listBox.DataSource = files;
 
 
                 if ((files != null) && (files.Count > 0))
@@ -152,7 +185,6 @@ namespace Code_parser
             else
             {
                 MessageBox.Show("Дождитесь окончания предыдущей операции анализа файла.", "Операция не может быть выполнена", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
             }
         }
 
@@ -214,8 +246,15 @@ namespace Code_parser
                 stat_grid.Columns[0].HeaderText = "Оператор";
                 stat_grid.Columns[1].HeaderText = "Количество";
 
+                //Общее количество операторов
+                lab.N = main.operators.CountAllOperators();
+                N_textBox.Text = lab.N.ToString();
+
                 //Кнопка расчета трудоемкости
                 countLaboriousness_button.Enabled = true;
+
+                //Экспорт
+                exportReport_ToolStripMenuItem.Enabled = true;
             }
 
         }
@@ -253,8 +292,7 @@ namespace Code_parser
         //Расчет трудоемкости
         private void countLaboriousness_button_Click(object sender, EventArgs e)
         {
-            lab.N = main.operators.CountAllOperators();
-            N_textBox.Text = lab.N.ToString();
+            lab.N = Convert.ToInt32(N_textBox.Text);
 
             lab.Kn = Convert.ToDouble(Kn_textBox.Text);
             lab.Pp = Convert.ToDouble(Pp_textBox.Text);
@@ -262,7 +300,11 @@ namespace Code_parser
             lab.K2 = Convert.ToDouble(K2_textBox.Text);
             lab.K3 = Convert.ToDouble(K3_textBox.Text);
 
-            laboriousness_textBox.Text = lab.CounLaboriousness().ToString();
+            lab.Result = lab.CounLaboriousness();
+            laboriousness_textBox.Text = lab.Result.ToString();
+
+            //Экспорт
+            exportWord_ToolStripMenuItem.Enabled = true;
         }
 
         //Сброс трудоемкости
@@ -270,29 +312,6 @@ namespace Code_parser
         {
             N_textBox.Clear();
             laboriousness_textBox.Clear();
-        }
-
-        //Выбор значения Knp для расчета трудоемкости
-        private void Knp_radioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            RadioButton radioBtn = (RadioButton)sender;
-
-            string currentButton = radioBtn.Name;
-            if (radioBtn.Checked == true)
-            {
-                switch (currentButton)
-                {
-                    case "Knp01_radioButton":
-                        lab.Knp = 0.1;
-                        break;
-                    case "Knp06_radioButton":
-                        lab.Knp = 0.6;
-                        break;
-                    case "Knp1_radioButton":
-                        lab.Knp = 1.0;
-                        break;
-                }
-            }
         }
         
         //Выбор значения K1 для расчета трудоемкости
@@ -312,6 +331,31 @@ namespace Code_parser
                         lab.K1 = 1.25;
                         break;
                 }
+            }
+        }
+
+        private void Knp_trackBar_ValueChanged(object sender, EventArgs e)
+        {
+            TrackBar trackBar = (TrackBar)sender;
+
+            double Knp_value = trackBar.Value / 10.0;
+            lab.Knp = Knp_value;
+
+            Knp_textBox.Text = Knp_value.ToString();
+        }
+
+        private void exportWord_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Info info = new Info(8.25 * lab.Result, lab.N, 5, lab.Pp, lab.Kn, lab.Knp, lab.K1, lab.K2, lab.K3, lab.Result);
+
+            try
+            {
+                WordDocument document = new WordDocument(Application.StartupPath + "\\config\\report_template.dotx");
+                document.ReportGeneration(info);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Ошибка экспорта в Microsoft Office Word.\n" + error, "Не удалось открыть файл", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }
