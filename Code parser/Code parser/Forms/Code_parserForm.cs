@@ -139,6 +139,10 @@ namespace Code_parser
                 lab.N = main.operators.CountAllOperators();
                 N_textBox.Text = lab.N.ToString();
 
+                //K2 - поправочный коэффициент
+                lab.K2 = lab.SearchK2(lab.N, 1.0).value;
+                K2_textBox.Text = lab.K2.ToString();
+
                 //Кнопка расчета трудоемкости
                 countLaboriousness_button.Enabled = true;
 
@@ -250,6 +254,10 @@ namespace Code_parser
                 lab.N = main.operators.CountAllOperators();
                 N_textBox.Text = lab.N.ToString();
 
+                //K2 - поправочный коэффициент
+                lab.K2 = lab.SearchK2(lab.N, 1.0).value;
+                K2_textBox.Text = lab.K2.ToString();
+
                 //Кнопка расчета трудоемкости
                 countLaboriousness_button.Enabled = true;
 
@@ -292,16 +300,26 @@ namespace Code_parser
         //Расчет трудоемкости
         private void countLaboriousness_button_Click(object sender, EventArgs e)
         {
-            lab.N = Convert.ToInt32(N_textBox.Text);
+            try
+            {
+                lab.N = Convert.ToInt32(N_textBox.Text);
 
-            lab.Kn = Convert.ToDouble(Kn_textBox.Text);
-            lab.Pp = Convert.ToDouble(Pp_textBox.Text);
+                lab.dayDuration = Convert.ToDouble(dayDuration_textBox.Text);
 
-            lab.K2 = Convert.ToDouble(K2_textBox.Text);
-            lab.K3 = Convert.ToDouble(K3_textBox.Text);
+                lab.Kn = Convert.ToDouble(Kn_textBox.Text);
+                lab.Pp = Convert.ToDouble(Pp_textBox.Text);
 
-            lab.Result = lab.CounLaboriousness();
-            laboriousness_textBox.Text = lab.Result.ToString();
+                lab.K2 = Convert.ToDouble(K2_textBox.Text);
+                lab.K3 = Convert.ToDouble(K3_textBox.Text);
+
+                lab.laboriousness = lab.CounLaboriousness();
+                lab.resultVal = lab.dayDuration * lab.laboriousness;
+                laboriousness_textBox.Text = lab.resultVal.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Проверьте корректность ввода параметров для расчета трудоемкости.", "Не удалось расчитать трудоемкость программного обеспечения", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
             //Экспорт
             exportWord_ToolStripMenuItem.Enabled = true;
@@ -346,7 +364,7 @@ namespace Code_parser
 
         private void exportWord_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Info info = new Info(8.25 * lab.Result, lab.N, 5, lab.Pp, lab.Kn, lab.Knp, lab.K1, lab.K2, lab.K3, lab.Result);
+            Info info = new Info(lab.dayDuration * lab.laboriousness, lab.N, 5, lab.Pp, lab.Kn, lab.Knp, lab.K1, lab.K2, lab.K3, lab.laboriousness);
 
             try
             {

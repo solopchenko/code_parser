@@ -15,18 +15,22 @@ namespace Code_parser
         public double K1;
         public double K2;
         public double K3;
-        public double Result;
+        public double laboriousness;
+        public double resultVal;
+        public double dayDuration;
 
         public Laboriousness()
         {
             N = 0;
-            Pp = 0.5;
-            Kn = 0.5;
+            Pp = 2.88;
+            Kn = 0.58;
             Knp = 0.5;
             K1 = 0.5;
             K2 = 0.5;
-            K3 = 0.5;
-            Result = 0;
+            K3 = 1.0;
+            dayDuration = 8.25;
+            laboriousness = 0;
+            resultVal = 0;
         }
 
         public double CounLaboriousness()
@@ -37,7 +41,18 @@ namespace Code_parser
             return result;
         }
 
-        public void BinarySearchForK2(int N)
+        public struct Result
+        {
+            public double key;
+            public double value;
+
+            public override string ToString()
+            {
+                return string.Format("Key: {0} Value:{1}", key, value);
+            }
+        }
+
+        public Result SearchK2(int N, double delta)
         {
             Dictionary<int, double> K2_dic = new Dictionary<int, double>();
             K2_dic.Add(100, 1.0);
@@ -59,6 +74,49 @@ namespace Code_parser
             K2_dic.Add(60000, 3.0);
             K2_dic.Add(80000, 3.0);
             K2_dic.Add(100000, 3.0);
+
+            Result result = new Result();
+
+            var maximum = K2_dic.FirstOrDefault(x => x.Key > N);
+
+            if (maximum.Key == 0)
+            {
+                Result max = new Result();
+                max.key = 100000;
+                max.value = 3;
+
+                //return max;
+            }
+
+            var minimum = K2_dic.LastOrDefault(x => x.Key < N);            
+
+            Result bottom = new Result();
+            bottom.key = minimum.Key;
+            bottom.value = minimum.Value;
+
+            Result upper = new Result();
+            upper.key = maximum.Key;
+            upper.value = maximum.Value;            
+
+            result.key = ((upper.key + bottom.key) / 2.0);
+            result.value = ((upper.value + bottom.value) / 2.0);
+
+            while (Math.Abs(N - result.key) > delta)
+            {
+                if (N < result.key)
+                {
+                    upper = result;   
+                }
+                else
+                {                    
+                    bottom = result; 
+                }
+
+                result.key = ((upper.key + bottom.key) / 2.0);
+                result.value = ((upper.value + bottom.value) / 2.0);
+            }
+
+            return result;
         }
     }
 }

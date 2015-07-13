@@ -69,6 +69,8 @@
             this.Pp_textBox = new System.Windows.Forms.TextBox();
             this.N_groupBox = new System.Windows.Forms.GroupBox();
             this.N_textBox = new System.Windows.Forms.TextBox();
+            this.dayDuration_groupBox = new System.Windows.Forms.GroupBox();
+            this.dayDuration_textBox = new System.Windows.Forms.TextBox();
             this.fileContent_groupBox.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.listOfFiles_tabPage.SuspendLayout();
@@ -87,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Knp_trackBar)).BeginInit();
             this.Pp_groupBox.SuspendLayout();
             this.N_groupBox.SuspendLayout();
+            this.dayDuration_groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // fileContent_richTextBox
@@ -159,18 +162,18 @@
             this.stat_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stat_grid.Location = new System.Drawing.Point(9, 19);
             this.stat_grid.Name = "stat_grid";
-            this.stat_grid.Size = new System.Drawing.Size(307, 314);
+            this.stat_grid.Size = new System.Drawing.Size(307, 241);
             this.stat_grid.TabIndex = 3;
             // 
             // stat_groupBox
             // 
             this.stat_groupBox.Controls.Add(this.stat_grid);
-            this.stat_groupBox.Location = new System.Drawing.Point(11, 82);
+            this.stat_groupBox.Location = new System.Drawing.Point(11, 155);
             this.stat_groupBox.Name = "stat_groupBox";
-            this.stat_groupBox.Size = new System.Drawing.Size(331, 342);
+            this.stat_groupBox.Size = new System.Drawing.Size(331, 269);
             this.stat_groupBox.TabIndex = 3;
             this.stat_groupBox.TabStop = false;
-            this.stat_groupBox.Text = "Статистика";
+            this.stat_groupBox.Text = "Статистика операторов";
             // 
             // menuStrip
             // 
@@ -198,7 +201,7 @@
             // 
             this.openFile_ToolStripMenuItem.Name = "openFile_ToolStripMenuItem";
             this.openFile_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openFile_ToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.openFile_ToolStripMenuItem.Size = new System.Drawing.Size(277, 22);
             this.openFile_ToolStripMenuItem.Text = "Открыть файл";
             this.openFile_ToolStripMenuItem.Click += new System.EventHandler(this.openFile_ToolStripMenuItem_Click);
             // 
@@ -206,7 +209,7 @@
             // 
             this.openFolder_ToolStripMenuItem.Name = "openFolder_ToolStripMenuItem";
             this.openFolder_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.openFolder_ToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.openFolder_ToolStripMenuItem.Size = new System.Drawing.Size(277, 22);
             this.openFolder_ToolStripMenuItem.Text = "Открыть папку";
             this.openFolder_ToolStripMenuItem.Click += new System.EventHandler(this.openFolder_ToolStripMenuItem_Click);
             // 
@@ -222,7 +225,7 @@
             // 
             this.exportWord_ToolStripMenuItem.Name = "exportWord_ToolStripMenuItem";
             this.exportWord_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.exportWord_ToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.exportWord_ToolStripMenuItem.Size = new System.Drawing.Size(277, 22);
             this.exportWord_ToolStripMenuItem.Text = "Открыть отчет в Word";
             this.exportWord_ToolStripMenuItem.Click += new System.EventHandler(this.exportWord_ToolStripMenuItem_Click);
             // 
@@ -284,6 +287,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dayDuration_groupBox);
             this.groupBox1.Controls.Add(this.Laboriousness_groupBox);
             this.groupBox1.Controls.Add(this.K3_groupBox);
             this.groupBox1.Controls.Add(this.Kn_groupBox);
@@ -309,7 +313,7 @@
             this.Laboriousness_groupBox.Size = new System.Drawing.Size(331, 67);
             this.Laboriousness_groupBox.TabIndex = 28;
             this.Laboriousness_groupBox.TabStop = false;
-            this.Laboriousness_groupBox.Text = "Трудоёмкость программного обеспечения";
+            this.Laboriousness_groupBox.Text = "Трудоемкость разработки программного компонента (человеко-дни)";
             // 
             // laboriousness_textBox
             // 
@@ -384,7 +388,6 @@
             this.K2_textBox.ReadOnly = true;
             this.K2_textBox.Size = new System.Drawing.Size(234, 20);
             this.K2_textBox.TabIndex = 10;
-            this.K2_textBox.Text = "1,09";
             // 
             // K1_groupBox
             // 
@@ -458,7 +461,7 @@
             this.Pp_groupBox.Size = new System.Drawing.Size(254, 57);
             this.Pp_groupBox.TabIndex = 26;
             this.Pp_groupBox.TabStop = false;
-            this.Pp_groupBox.Text = "Средняя производительность разработчиков";
+            this.Pp_groupBox.Text = "Средняя производительность разработчиков (команда / день)";
             // 
             // Pp_textBox
             // 
@@ -473,10 +476,10 @@
             this.N_groupBox.Controls.Add(this.N_textBox);
             this.N_groupBox.Location = new System.Drawing.Point(11, 30);
             this.N_groupBox.Name = "N_groupBox";
-            this.N_groupBox.Size = new System.Drawing.Size(331, 46);
+            this.N_groupBox.Size = new System.Drawing.Size(331, 57);
             this.N_groupBox.TabIndex = 23;
             this.N_groupBox.TabStop = false;
-            this.N_groupBox.Text = "Общее количество операторов";
+            this.N_groupBox.Text = "Общее количество операторов (шт.)";
             // 
             // N_textBox
             // 
@@ -485,6 +488,24 @@
             this.N_textBox.ReadOnly = true;
             this.N_textBox.Size = new System.Drawing.Size(307, 20);
             this.N_textBox.TabIndex = 13;
+            // 
+            // dayDuration_groupBox
+            // 
+            this.dayDuration_groupBox.Controls.Add(this.dayDuration_textBox);
+            this.dayDuration_groupBox.Location = new System.Drawing.Point(12, 93);
+            this.dayDuration_groupBox.Name = "dayDuration_groupBox";
+            this.dayDuration_groupBox.Size = new System.Drawing.Size(330, 55);
+            this.dayDuration_groupBox.TabIndex = 29;
+            this.dayDuration_groupBox.TabStop = false;
+            this.dayDuration_groupBox.Text = "Продолжительность рабочего дня (часы)";
+            // 
+            // dayDuration_textBox
+            // 
+            this.dayDuration_textBox.Location = new System.Drawing.Point(8, 20);
+            this.dayDuration_textBox.Name = "dayDuration_textBox";
+            this.dayDuration_textBox.Size = new System.Drawing.Size(307, 20);
+            this.dayDuration_textBox.TabIndex = 0;
+            this.dayDuration_textBox.Text = "8,25";
             // 
             // Code_parserForm
             // 
@@ -528,6 +549,8 @@
             this.Pp_groupBox.PerformLayout();
             this.N_groupBox.ResumeLayout(false);
             this.N_groupBox.PerformLayout();
+            this.dayDuration_groupBox.ResumeLayout(false);
+            this.dayDuration_groupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -576,6 +599,8 @@
         private System.Windows.Forms.TabPage contentFiles_tabPage;
         private System.Windows.Forms.ListBox listOfFiles_listBox;
         private System.Windows.Forms.ToolStripMenuItem exportWord_ToolStripMenuItem;
+        private System.Windows.Forms.GroupBox dayDuration_groupBox;
+        private System.Windows.Forms.TextBox dayDuration_textBox;
     }
 }
 
