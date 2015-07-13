@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Code_parser.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -76,7 +77,7 @@ namespace Code_parser
                 main.Reset();
 
 
-                string fileName = main.OpenDialog("Выберите файл с исходным кодом","C# code *.cs | *.CS");
+                string fileName = main.OpenDialog("Выберите файл с исходным кодом", "C# code|*.cs|C code|*.c|C++ code|*.cpp");
 
 
                 if (!String.IsNullOrEmpty(fileName))
@@ -172,7 +173,7 @@ namespace Code_parser
 
                 fileContent_richTextBox.Clear();
 
-                List<string> files = main.OpenFolder("*.cs");
+                List<string> files = main.OpenFolder("*.cs; *.c; *.cpp");
 
                 listOfFiles_listBox.DataSource = files;
 
@@ -312,9 +313,16 @@ namespace Code_parser
                 lab.K2 = Convert.ToDouble(K2_textBox.Text);
                 lab.K3 = Convert.ToDouble(K3_textBox.Text);
 
-                lab.laboriousness = lab.CounLaboriousness();
-                lab.resultVal = lab.dayDuration * lab.laboriousness;
-                laboriousness_textBox.Text = lab.resultVal.ToString();
+                if( (lab.dayDuration >= 0) && (lab.Kn >= 0) && (lab.Pp >=0) && (lab.K2 >= 0) && (lab.K3 >=0))
+                {
+                    lab.laboriousness = lab.CounLaboriousness();
+                    lab.resultVal = lab.dayDuration * lab.laboriousness;
+                    laboriousness_textBox.Text = lab.resultVal.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Коэффициенты не могут быть отрицательными.", "Не удалось расчитать трудоемкость программного обеспечения", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             catch
             {
@@ -375,6 +383,12 @@ namespace Code_parser
             {
                 MessageBox.Show("Ошибка экспорта в Microsoft Office Word.\n" + error, "Не удалось открыть файл", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
         }
     }
 }

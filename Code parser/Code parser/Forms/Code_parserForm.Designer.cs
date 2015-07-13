@@ -50,6 +50,8 @@
             this.prograss_label = new System.Windows.Forms.Label();
             this.directory_backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dayDuration_groupBox = new System.Windows.Forms.GroupBox();
+            this.dayDuration_textBox = new System.Windows.Forms.TextBox();
             this.Laboriousness_groupBox = new System.Windows.Forms.GroupBox();
             this.laboriousness_textBox = new System.Windows.Forms.TextBox();
             this.countLaboriousness_button = new System.Windows.Forms.Button();
@@ -69,8 +71,7 @@
             this.Pp_textBox = new System.Windows.Forms.TextBox();
             this.N_groupBox = new System.Windows.Forms.GroupBox();
             this.N_textBox = new System.Windows.Forms.TextBox();
-            this.dayDuration_groupBox = new System.Windows.Forms.GroupBox();
-            this.dayDuration_textBox = new System.Windows.Forms.TextBox();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileContent_groupBox.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.listOfFiles_tabPage.SuspendLayout();
@@ -80,6 +81,7 @@
             this.menuStrip.SuspendLayout();
             this.progress_groupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.dayDuration_groupBox.SuspendLayout();
             this.Laboriousness_groupBox.SuspendLayout();
             this.K3_groupBox.SuspendLayout();
             this.Kn_groupBox.SuspendLayout();
@@ -89,7 +91,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Knp_trackBar)).BeginInit();
             this.Pp_groupBox.SuspendLayout();
             this.N_groupBox.SuspendLayout();
-            this.dayDuration_groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // fileContent_richTextBox
@@ -179,7 +180,8 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.file_ToolStripMenuItem,
-            this.settings_ToolStripMenuItem});
+            this.settings_ToolStripMenuItem,
+            this.оПрограммеToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(637, 24);
@@ -303,6 +305,24 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Расчет трудоемкости программного обеспечения";
+            // 
+            // dayDuration_groupBox
+            // 
+            this.dayDuration_groupBox.Controls.Add(this.dayDuration_textBox);
+            this.dayDuration_groupBox.Location = new System.Drawing.Point(12, 93);
+            this.dayDuration_groupBox.Name = "dayDuration_groupBox";
+            this.dayDuration_groupBox.Size = new System.Drawing.Size(330, 55);
+            this.dayDuration_groupBox.TabIndex = 29;
+            this.dayDuration_groupBox.TabStop = false;
+            this.dayDuration_groupBox.Text = "Продолжительность рабочего дня (часы)";
+            // 
+            // dayDuration_textBox
+            // 
+            this.dayDuration_textBox.Location = new System.Drawing.Point(8, 20);
+            this.dayDuration_textBox.Name = "dayDuration_textBox";
+            this.dayDuration_textBox.Size = new System.Drawing.Size(307, 20);
+            this.dayDuration_textBox.TabIndex = 0;
+            this.dayDuration_textBox.Text = "8,25";
             // 
             // Laboriousness_groupBox
             // 
@@ -489,23 +509,12 @@
             this.N_textBox.Size = new System.Drawing.Size(307, 20);
             this.N_textBox.TabIndex = 13;
             // 
-            // dayDuration_groupBox
+            // оПрограммеToolStripMenuItem
             // 
-            this.dayDuration_groupBox.Controls.Add(this.dayDuration_textBox);
-            this.dayDuration_groupBox.Location = new System.Drawing.Point(12, 93);
-            this.dayDuration_groupBox.Name = "dayDuration_groupBox";
-            this.dayDuration_groupBox.Size = new System.Drawing.Size(330, 55);
-            this.dayDuration_groupBox.TabIndex = 29;
-            this.dayDuration_groupBox.TabStop = false;
-            this.dayDuration_groupBox.Text = "Продолжительность рабочего дня (часы)";
-            // 
-            // dayDuration_textBox
-            // 
-            this.dayDuration_textBox.Location = new System.Drawing.Point(8, 20);
-            this.dayDuration_textBox.Name = "dayDuration_textBox";
-            this.dayDuration_textBox.Size = new System.Drawing.Size(307, 20);
-            this.dayDuration_textBox.TabIndex = 0;
-            this.dayDuration_textBox.Text = "8,25";
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Code_parserForm
             // 
@@ -532,6 +541,8 @@
             this.progress_groupBox.ResumeLayout(false);
             this.progress_groupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.dayDuration_groupBox.ResumeLayout(false);
+            this.dayDuration_groupBox.PerformLayout();
             this.Laboriousness_groupBox.ResumeLayout(false);
             this.Laboriousness_groupBox.PerformLayout();
             this.K3_groupBox.ResumeLayout(false);
@@ -549,8 +560,6 @@
             this.Pp_groupBox.PerformLayout();
             this.N_groupBox.ResumeLayout(false);
             this.N_groupBox.PerformLayout();
-            this.dayDuration_groupBox.ResumeLayout(false);
-            this.dayDuration_groupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,6 +610,7 @@
         private System.Windows.Forms.ToolStripMenuItem exportWord_ToolStripMenuItem;
         private System.Windows.Forms.GroupBox dayDuration_groupBox;
         private System.Windows.Forms.TextBox dayDuration_textBox;
+        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
     }
 }
 
