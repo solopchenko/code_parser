@@ -37,13 +37,13 @@ namespace Code_parser
         }
 
         //Выбор папки
-        public List<string> OpenFolder(string filter)
+        public List<string> OpenFolder()
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
 
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                return Directory.GetFiles(fbd.SelectedPath, filter, SearchOption.AllDirectories).ToList();
+                return Directory.GetFiles(fbd.SelectedPath, "*.*", SearchOption.AllDirectories).Where(s => s.EndsWith(".cs") || s.EndsWith(".c") || s.EndsWith(".cpp")).ToList();
             }
             else
             {

@@ -173,7 +173,7 @@ namespace Code_parser
 
                 fileContent_richTextBox.Clear();
 
-                List<string> files = main.OpenFolder("*.cs; *.c; *.cpp");
+                List<string> files = main.OpenFolder();
 
                 listOfFiles_listBox.DataSource = files;
 
@@ -184,7 +184,7 @@ namespace Code_parser
                 }
                 else
                 {
-                    MessageBox.Show("В выбранной папке отсутсвуют файлы с исходным кодом C#.", "Файлы не найлдены", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("В выбранной папке отсутсвуют файлы с исходным кодом.", "Файлы не найлдены", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }  
             }
             else

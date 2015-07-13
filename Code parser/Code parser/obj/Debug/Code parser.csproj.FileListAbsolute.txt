@@ -20,3 +20,5 @@ C:\Users\ДНФ\Desktop\Практика\code_parser\Code parser\Code parser\obj
 Z:\Dropbox\Learning\Course 3\Практика\code_parser\Code parser\Code parser\obj\Debug\Code_parser.OperatorsSettings.resources
 C:\Users\ДНФ\Desktop\Практика\code_parser\Code parser\Code parser\bin\Debug\config\report_template.dotx
 C:\Users\ДНФ\Desktop\Практика\code_parser\Code parser\Code parser\obj\Debug\Code_parser.Forms.About.resources
+Z:\Dropbox\Learning\Course 3\Практика\code_parser\Code parser\Code parser\bin\Debug\config\report_template.dotx
+Z:\Dropbox\Learning\Course 3\Практика\code_parser\Code parser\Code parser\obj\Debug\Code_parser.Forms.About.resources
