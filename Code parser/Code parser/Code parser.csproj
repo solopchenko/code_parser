@@ -109,7 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\ic_logo.jpg" />
-    <None Include="Resources\ic_logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -44,6 +44,7 @@
             this.exportWord_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settings_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operatorsSettings_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.file_backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.progress_groupBox = new System.Windows.Forms.GroupBox();
@@ -71,7 +72,6 @@
             this.Pp_textBox = new System.Windows.Forms.TextBox();
             this.N_groupBox = new System.Windows.Forms.GroupBox();
             this.N_textBox = new System.Windows.Forms.TextBox();
-            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileContent_groupBox.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.listOfFiles_tabPage.SuspendLayout();
@@ -247,6 +247,13 @@
             this.operatorsSettings_ToolStripMenuItem.Text = "Настройка операторов";
             this.operatorsSettings_ToolStripMenuItem.Click += new System.EventHandler(this.operatorsSettings_ToolStripMenuItem_Click);
             // 
+            // оПрограммеToolStripMenuItem
+            // 
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // file_backgroundWorker
             // 
             this.file_backgroundWorker.WorkerReportsProgress = true;
@@ -349,7 +356,7 @@
             this.countLaboriousness_button.Name = "countLaboriousness_button";
             this.countLaboriousness_button.Size = new System.Drawing.Size(75, 23);
             this.countLaboriousness_button.TabIndex = 14;
-            this.countLaboriousness_button.Text = "Расчитать";
+            this.countLaboriousness_button.Text = "Рассчитать";
             this.countLaboriousness_button.UseVisualStyleBackColor = true;
             this.countLaboriousness_button.Click += new System.EventHandler(this.countLaboriousness_button_Click);
             // 
@@ -508,13 +515,6 @@
             this.N_textBox.ReadOnly = true;
             this.N_textBox.Size = new System.Drawing.Size(307, 20);
             this.N_textBox.TabIndex = 13;
-            // 
-            // оПрограммеToolStripMenuItem
-            // 
-            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.оПрограммеToolStripMenuItem.Text = "О программе";
-            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Code_parserForm
             // 
