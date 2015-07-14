@@ -95,6 +95,7 @@
             // 
             // fileContent_richTextBox
             // 
+            this.fileContent_richTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.fileContent_richTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.fileContent_richTextBox.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.fileContent_richTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -340,7 +341,7 @@
             this.Laboriousness_groupBox.Size = new System.Drawing.Size(331, 67);
             this.Laboriousness_groupBox.TabIndex = 28;
             this.Laboriousness_groupBox.TabStop = false;
-            this.Laboriousness_groupBox.Text = "Трудоемкость разработки программного компонента (человеко-дни)";
+            this.Laboriousness_groupBox.Text = "Трудоемкость разработки программного обеспечения (человеко-дни)";
             // 
             // laboriousness_textBox
             // 
@@ -386,8 +387,8 @@
             this.Kn_groupBox.Size = new System.Drawing.Size(253, 89);
             this.Kn_groupBox.TabIndex = 27;
             this.Kn_groupBox.TabStop = false;
-            this.Kn_groupBox.Text = "Коэффициент, пересчета производительности проектировщиков алгоритмов к производит" +
-    "ельности разработчиков программ";
+            this.Kn_groupBox.Text = "Коэффициент пересчета производительности проектировщиков алгоритмов к производите" +
+    "льности разработчиков программ";
             // 
             // Kn_textBox
             // 
@@ -460,7 +461,7 @@
             this.Knp_groupBox.Size = new System.Drawing.Size(252, 85);
             this.Knp_groupBox.TabIndex = 22;
             this.Knp_groupBox.TabStop = false;
-            this.Knp_groupBox.Text = "Коэффициент приемственности программного компонента";
+            this.Knp_groupBox.Text = "Коэффициент преемственности  программного компонента";
             // 
             // Knp_textBox
             // 

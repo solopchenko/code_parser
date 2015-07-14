@@ -149,6 +149,9 @@ namespace Code_parser
 
                 //Экспорт
                 exportReport_ToolStripMenuItem.Enabled = true;
+
+                //Открытие вкладки с содержанием
+                tabControl.SelectedIndex = 1;
             }
         }
 
@@ -184,7 +187,7 @@ namespace Code_parser
                 }
                 else
                 {
-                    MessageBox.Show("В выбранной папке отсутсвуют файлы с исходным кодом.", "Файлы не найлдены", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("В выбранной папке отсутствуют файлы с исходным кодом.", "Файлы не найлдены", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }  
             }
             else
@@ -264,6 +267,9 @@ namespace Code_parser
 
                 //Экспорт
                 exportReport_ToolStripMenuItem.Enabled = true;
+
+                //Открытие вкладки со списком файлов
+                tabControl.SelectedIndex = 0;
             }
 
         }
@@ -321,12 +327,12 @@ namespace Code_parser
                 }
                 else
                 {
-                    MessageBox.Show("Коэффициенты не могут быть отрицательными.", "Не удалось расчитать трудоемкость программного обеспечения", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Коэффициенты не могут быть отрицательными.", "Проверьте коэффициенты", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch
             {
-                MessageBox.Show("Проверьте корректность ввода параметров для расчета трудоемкости.", "Не удалось расчитать трудоемкость программного обеспечения", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Проверьте корректность ввода параметров для расчета трудоемкости разработки программного обеспечения.", "Проверьте коэффициенты", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             //Экспорт
@@ -376,7 +382,7 @@ namespace Code_parser
 
             try
             {
-                WordDocument document = new WordDocument(Application.StartupPath + "\\config\\report_template.dotx");
+                WordDocument document = new WordDocument(Application.StartupPath + "\\Resources\\report_template.dotx");
                 document.ReportGeneration(info);
             }
             catch (Exception error)
