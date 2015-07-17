@@ -391,7 +391,19 @@ namespace Code_parser
             }
         }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void userGuide_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(Application.StartupPath + "\\Resources\\user_guide.pdf");
+            }
+            catch
+            {
+                MessageBox.Show("Возможно файл с руководством пользователя отсутствует или на компьютере не установлены средства просмотра PDF файлов.", "Не удалось открыть руководство пользователя", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void about_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             About about = new About();
             about.Show();

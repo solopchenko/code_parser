@@ -44,7 +44,7 @@
             this.exportWord_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settings_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operatorsSettings_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.help_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.file_backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.progress_groupBox = new System.Windows.Forms.GroupBox();
@@ -72,6 +72,8 @@
             this.Pp_textBox = new System.Windows.Forms.TextBox();
             this.N_groupBox = new System.Windows.Forms.GroupBox();
             this.N_textBox = new System.Windows.Forms.TextBox();
+            this.about_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userGuide_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileContent_groupBox.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.listOfFiles_tabPage.SuspendLayout();
@@ -182,7 +184,7 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.file_ToolStripMenuItem,
             this.settings_ToolStripMenuItem,
-            this.оПрограммеToolStripMenuItem});
+            this.help_ToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(637, 24);
@@ -248,12 +250,14 @@
             this.operatorsSettings_ToolStripMenuItem.Text = "Настройка операторов";
             this.operatorsSettings_ToolStripMenuItem.Click += new System.EventHandler(this.operatorsSettings_ToolStripMenuItem_Click);
             // 
-            // оПрограммеToolStripMenuItem
+            // help_ToolStripMenuItem
             // 
-            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.оПрограммеToolStripMenuItem.Text = "О программе";
-            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.help_ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.about_ToolStripMenuItem,
+            this.userGuide_ToolStripMenuItem});
+            this.help_ToolStripMenuItem.Name = "help_ToolStripMenuItem";
+            this.help_ToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.help_ToolStripMenuItem.Text = "Помощь";
             // 
             // file_backgroundWorker
             // 
@@ -517,6 +521,20 @@
             this.N_textBox.Size = new System.Drawing.Size(307, 20);
             this.N_textBox.TabIndex = 13;
             // 
+            // about_ToolStripMenuItem
+            // 
+            this.about_ToolStripMenuItem.Name = "about_ToolStripMenuItem";
+            this.about_ToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.about_ToolStripMenuItem.Text = "О программе";
+            this.about_ToolStripMenuItem.Click += new System.EventHandler(this.about_ToolStripMenuItem_Click);
+            // 
+            // userGuide_ToolStripMenuItem
+            // 
+            this.userGuide_ToolStripMenuItem.Name = "userGuide_ToolStripMenuItem";
+            this.userGuide_ToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.userGuide_ToolStripMenuItem.Text = "Руководство пользователя";
+            this.userGuide_ToolStripMenuItem.Click += new System.EventHandler(this.userGuide_ToolStripMenuItem_Click);
+            // 
             // Code_parserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -611,7 +629,9 @@
         private System.Windows.Forms.ToolStripMenuItem exportWord_ToolStripMenuItem;
         private System.Windows.Forms.GroupBox dayDuration_groupBox;
         private System.Windows.Forms.TextBox dayDuration_textBox;
-        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem help_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem about_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem userGuide_ToolStripMenuItem;
     }
 }
 
