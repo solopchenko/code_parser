@@ -1,6 +1,0 @@
-C:\Users\user\Documents\Visual Studio 2010\Projects\_Trash\Tester\Tester\bin\Debug\Tester.exe
-C:\Users\user\Documents\Visual Studio 2010\Projects\_Trash\Tester\Tester\bin\Debug\Tester.pdb
-C:\Users\user\Documents\Visual Studio 2010\Projects\_Trash\Tester\Tester\obj\x86\Debug\Tester.exe
-C:\Users\user\Documents\Visual Studio 2010\Projects\_Trash\Tester\Tester\obj\x86\Debug\Tester.pdb
-C:\Users\ДНФ\Desktop\Практика\code_parser\Examples\e\Tester\Tester\obj\x86\Debug\Tester.exe
-C:\Users\ДНФ\Desktop\Практика\code_parser\Examples\e\Tester\Tester\obj\x86\Debug\Tester.pdb

@@ -1,8 +1,0 @@
-C:\Users\user\Documents\Visual Studio 2010\Projects\_Trash\OfficeReport\OfficeReport\obj\x86\Debug\OfficeReport.Form1.resources
-C:\Users\user\Documents\Visual Studio 2010\Projects\_Trash\OfficeReport\OfficeReport\obj\x86\Debug\OfficeReport.Properties.Resources.resources
-C:\Users\user\Documents\Visual Studio 2010\Projects\_Trash\OfficeReport\OfficeReport\obj\x86\Debug\OfficeReport.csproj.GenerateResource.Cache
-C:\Users\user\Documents\Visual Studio 2010\Projects\_Trash\OfficeReport\OfficeReport\bin\Debug\OfficeReport.exe
-C:\Users\user\Documents\Visual Studio 2010\Projects\_Trash\OfficeReport\OfficeReport\bin\Debug\OfficeReport.pdb
-C:\Users\user\Documents\Visual Studio 2010\Projects\_Trash\OfficeReport\OfficeReport\obj\x86\Debug\OfficeReport.exe
-C:\Users\user\Documents\Visual Studio 2010\Projects\_Trash\OfficeReport\OfficeReport\obj\x86\Debug\OfficeReport.pdb
-C:\Users\user\Documents\Visual Studio 2010\Projects\_Trash\OfficeReport\OfficeReport\obj\x86\Debug\OfficeReport.csprojResolveAssemblyReference.cache
