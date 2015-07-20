@@ -38,6 +38,8 @@
             this.company_label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.icLogo_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +47,7 @@
             // 
             this.developer_label.AutoSize = true;
             this.developer_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.developer_label.Location = new System.Drawing.Point(131, 75);
+            this.developer_label.Location = new System.Drawing.Point(131, 77);
             this.developer_label.Name = "developer_label";
             this.developer_label.Size = new System.Drawing.Size(103, 18);
             this.developer_label.TabIndex = 1;
@@ -57,9 +59,9 @@
             this.name_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.name_label.Location = new System.Drawing.Point(240, 77);
             this.name_label.Name = "name_label";
-            this.name_label.Size = new System.Drawing.Size(127, 18);
+            this.name_label.Size = new System.Drawing.Size(131, 18);
             this.name_label.TabIndex = 2;
-            this.name_label.Text = "Солопченко С.А.";
+            this.name_label.Text = "Солопченко С.А.,";
             // 
             // student_label
             // 
@@ -87,9 +89,9 @@
             this.university_2_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.university_2_label.Location = new System.Drawing.Point(240, 131);
             this.university_2_label.Name = "university_2_label";
-            this.university_2_label.Size = new System.Drawing.Size(306, 18);
+            this.university_2_label.Size = new System.Drawing.Size(310, 18);
             this.university_2_label.TabIndex = 5;
-            this.university_2_label.Text = "Томского политехнического университета";
+            this.university_2_label.Text = "Томского политехнического университета,";
             // 
             // icLogo_pictureBox
             // 
@@ -105,7 +107,7 @@
             // 
             this.company_label.AutoSize = true;
             this.company_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.company_label.Location = new System.Drawing.Point(109, 192);
+            this.company_label.Location = new System.Drawing.Point(105, 210);
             this.company_label.Name = "company_label";
             this.company_label.Size = new System.Drawing.Size(351, 18);
             this.company_label.TabIndex = 6;
@@ -131,12 +133,34 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Программа расчета трудоемкости разработки программного обеспечения";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(240, 152);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(173, 18);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "техник отделения 126-2";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(240, 174);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(244, 18);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "ФГУП «НПО им. С.А. Лавочкина»";
+            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(560, 229);
+            this.ClientSize = new System.Drawing.Size(560, 246);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.company_label);
@@ -169,5 +193,7 @@
         private System.Windows.Forms.Label company_label;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

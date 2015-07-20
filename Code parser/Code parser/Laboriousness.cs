@@ -38,7 +38,7 @@ namespace Code_parser
             double result = -1;
             result = (N / Pp) * (1 + 1 / Kn) * Knp * K1 * K2 * K3;
 
-            return result;
+            return Math.Round(result, 2);
         }
 
         public struct Result
